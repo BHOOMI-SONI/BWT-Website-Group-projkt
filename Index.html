@@ -1,8 +1,51 @@
-<htmL>
-    <head>
-        <style>
-            
-        </style>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snug Buddies | Pet Adoption</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar (appears on scroll) -->
+    <nav class="navbar">
+        <a href="#" class="logo">Snug Buddies</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Adopt</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section with Acrylic Effect -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>One More Friend Thousands more fun</h1>
+            <p>Discover loving companions waiting for their forever homes. Our adoption process connects pets with caring families.</p>
+            <a href="#" class="cta-button" id="getPetBtn">Get a Pet !!</a>
+        </div>
+    </section>
+
+    <!-- Main Content Section (placeholder) -->
+    <section style="height: 100vh; padding: 2rem; background-color: #f8f9fa;">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Our Adorable Pets</h2>
+        <p style="text-align: center;">This section will contain pet listings and more content.</p>
+    </section>
     
-</htmL>
+    <!-- Popup Container (initially hidden) -->
+    <div class="popup-overlay" id="petPopup">
+        <div class="popup-content">
+            <!--Bhoomi Your Part
+                     Add Content Here-->
+            <div class="popup-buttons">
+                <button class="popup-button" id="getPetRecommendedBtn">Get a Pet Recommended</button>
+                <button class="popup-button" id="viewCatalogueBtn">View Catalogue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
