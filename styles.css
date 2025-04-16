@@ -37,7 +37,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/background.svg');
+    background-image: url('images/hero-background.svg'); /* Placeholder SVG Option to change the Hero section background */
     background-size: cover;
     background-position: center;
     z-index: -2;
