@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const getPetRecommendedBtn = document.getElementById('getPetRecommendedBtn');
     const viewCatalogueBtn = document.getElementById('viewCatalogueBtn');
     const catalogueSection = document.querySelector('section:nth-child(3)'); // The second section (Our Adorable Pets)
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
     
     // Function to toggle navbar visibility based on scroll position
     function toggleNavbar() {
@@ -67,4 +69,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Call once on load to set initial state
     toggleNavbar();
+    
+    // Mobile menu toggle functionality
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when a nav link is clicked
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
 });
