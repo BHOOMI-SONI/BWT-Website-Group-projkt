@@ -39,7 +39,7 @@ export const petsBySpecies = {
         profileUrl: "/pets/cats/british-shorthair",
       },
       {
-       // ... Add more cat breeds here ( each individual entry in {})
+
       },
       
     ],
