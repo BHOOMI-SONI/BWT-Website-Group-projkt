@@ -1,7 +1,68 @@
 // Main JavaScript for Pet Adoption Website
 
+// Import pet data
+import { getAllPets, getPetsBySpecies } from './Data/petData.js';
+
 // Function to handle the navigation bar appearance on scroll and popup functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Load random pets for the catalogue display
+    loadRandomPets();
+    
+    // Function to load and display random pets in the catalogue
+    function loadRandomPets() {
+        // Try to get pets from the imported data
+        try {
+            const allPets = getAllPets();
+            const petCardsContainer = document.querySelector('.pet-cards-container');
+            
+            // If we have pets data and the container exists
+            if (allPets && allPets.length > 0 && petCardsContainer) {
+                // Clear existing static cards
+                petCardsContainer.innerHTML = '';
+                
+                // Get up to 4 random pets
+                const randomPets = getRandomPets(allPets, 4);
+                
+                // Create and append pet cards
+                randomPets.forEach(pet => {
+                    const petCard = createPetCard(pet);
+                    petCardsContainer.appendChild(petCard);
+                });
+            }
+        } catch (error) {
+            console.error('Error loading pet data:', error);
+        }
+    }
+    
+    // Function to get random pets from the array
+    function getRandomPets(petsArray, count) {
+        const shuffled = [...petsArray].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
+    }
+    
+    // Function to create a pet card element
+    function createPetCard(pet) {
+        const card = document.createElement('div');
+        card.className = 'pet-card';
+        
+        card.innerHTML = `
+            <div class="pet-card-image">
+                <img src="${pet.imageUrl || ''}" alt="${pet.name}" 
+                     onerror="this.src='https://via.placeholder.com/200x150?text=${pet.species}'">
+            </div>
+            <div class="pet-card-content">
+                <h4>${pet.name}</h4>
+                <p class="pet-description">${pet.description || 'Lovely pet looking for a home'}</p>
+                <div class="pet-details">
+                    <span class="pet-attribute">Size: ${pet.size || 'Medium'}</span>
+                    <span class="pet-attribute">Energy: ${pet.energyLevel || 'Medium'}</span>
+                </div>
+                <a href="#" class="pet-adopt-btn">Learn More</a>
+            </div>
+        `;
+        
+        return card;
+    }
     const navbar = document.querySelector('.navbar');
     const heroSection = document.querySelector('.hero');
     const getPetBtn = document.getElementById('getPetBtn');

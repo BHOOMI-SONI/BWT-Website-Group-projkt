@@ -9,11 +9,9 @@ export const petsBySpecies = {
     // --- CATS ---
     Cat: [
       {
-        //example
         id: 'cat001',
         name: "British Shorthair",
         species: "Cat",
-        // --- Lifestyle Match Properties ---
         size: "Medium", // Small, Medium, Large (for cats)
         energyLevel: "Low", // Low, Medium, High
         exerciseNeeds: "Low", // Primarily indoor play
@@ -24,7 +22,7 @@ export const petsBySpecies = {
         goodWithKids: true, // Generally patient
         goodWithOtherDogs: 'with_supervision', // Depends on dog's temperament
         goodWithCats: true, // Usually good with other cats
-        // goodWithSmallAnimals: false, // Instinctive hunters
+        goodWithOtherCats: true, // Generally good with other cats
         apartmentFriendly: true,
         vocalization: "Low", // Quiet cats
         timeAloneTolerance: "Good", // Quite independent
