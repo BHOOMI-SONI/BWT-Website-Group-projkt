@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Snugbuddies | Pet Adoption</title>
         <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="styles-additional.css" />
         <script type="module" src="script.js"></script>
     </head>
     <body>
@@ -17,29 +18,29 @@
                 <span></span>
             </div>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
+                <li><a href="Index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Pet Services <span class="dropdown-icon">▾</span></a>
+                    <a href="pet-services.html" class="dropdown-toggle">Pet Services <span class="dropdown-icon">▾</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Grooming</a></li>
-                        <li><a href="#">Food & Meds</a></li>
-                        <li><a href="#">Vets Near You</a></li>
+                        <li><a href="pet-services.html#grooming">Grooming</a></li>
+                        <li><a href="pet-services.html#food-meds">Food & Meds</a></li>
+                        <li><a href="pet-services.html#vets">Vets Near You</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Pet Education <span class="dropdown-icon">▾</span></a>
+                    <a href="pet-education.html" class="dropdown-toggle">Pet Education <span class="dropdown-icon">▾</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Pet School</a></li>
-                        <li><a href="#">Training Tips</a></li>
-                        <li><a href="#">Care Guides</a></li>
+                        <li><a href="pet-education.html#pet-school">Pet School</a></li>
+                        <li><a href="pet-education.html#training-tips">Training Tips</a></li>
+                        <li><a href="pet-education.html#care-guides">Care Guides</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Community <span class="dropdown-icon">▾</span></a>
+                    <a href="community.html" class="dropdown-toggle">Community <span class="dropdown-icon">▾</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Pet-Friendly Businesses</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Forums</a></li>
+                        <li><a href="community.html#pet-friendly">Pet-Friendly Businesses</a></li>
+                        <li><a href="community.html#events">Events</a></li>
+                        <li><a href="community.html#forums">Forums</a></li>
                     </ul>
                 </li>
             </ul>
@@ -68,21 +69,25 @@
             
             <!-- Pet Type Selection Tiles -->
             <div class="pet-type-tiles">
-                <div class="pet-tile" id="dogTile">
-                    <div class="pet-tile-image">
-                        <img src="images/dog-silhouette.svg" alt="Dog" onerror="this.src='images/work-in-progress.svg'">
+                <a href="dogs.html" class="pet-tile-link">
+                    <div class="pet-tile" id="dogTile">
+                        <div class="pet-tile-image">
+                            <img src="images/dog-silhouette.svg" alt="Dog" onerror="this.src='images/work-in-progress.svg'">
+                        </div>
+                        <h3>Dogs</h3>
+                        <p>Loyal companions ready for adventure</p>
                     </div>
-                    <h3>Dogs</h3>
-                    <p>Loyal companions ready for adventure</p>
-                </div>
+                </a>
                 
-                <div class="pet-tile" id="catTile">
-                    <div class="pet-tile-image">
-                        <img src="images/cat-silhouette.svg" alt="Cat" onerror="this.src='images/work-in-progress.svg'">
+                <a href="cats.html" class="pet-tile-link">
+                    <div class="pet-tile" id="catTile">
+                        <div class="pet-tile-image">
+                            <img src="images/cat-silhouette.svg" alt="Cat" onerror="this.src='images/work-in-progress.svg'">
+                        </div>
+                        <h3>Cats</h3>
+                        <p>Purr-fect friends for your home</p>
                     </div>
-                    <h3>Cats</h3>
-                    <p>Purr-fect friends for your home</p>
-                </div>
+                </a>
             </div>
             
             <!-- Pet Catalogue Display -->

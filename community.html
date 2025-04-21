@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Community | Snugbuddies Pet Adoption</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script type="module" src="script.js"></script>
+        <style>
+            .community-container {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+            
+            .community-section {
+                padding: 2rem;
+                border: 1px dashed #ccc;
+                border-radius: 8px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation Bar (appears on scroll) -->
+        <nav class="navbar visible">
+            <a href="Index.html" class="logo">Snug Buddies</a>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="Index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="pet-services.html" class="dropdown-toggle">Pet Services <span class="dropdown-icon">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pet-services.html#grooming">Grooming</a></li>
+                        <li><a href="pet-services.html#food-meds">Food & Meds</a></li>
+                        <li><a href="pet-services.html#vets">Vets Near You</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="pet-education.html" class="dropdown-toggle">Pet Education <span class="dropdown-icon">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pet-education.html#pet-school">Pet School</a></li>
+                        <li><a href="pet-education.html#training-tips">Training Tips</a></li>
+                        <li><a href="pet-education.html#care-guides">Care Guides</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="community.html" class="dropdown-toggle">Community <span class="dropdown-icon">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#pet-friendly">Pet-Friendly Businesses</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#forums">Forums</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Section -->
+        <section class="page-content">
+            <div class="container">
+                <h1>Pet Community</h1>
+                <p>Connect with other pet lovers and find pet-friendly resources.</p>
+                
+                <div class="community-container">
+                    <!-- Pet-Friendly Businesses Section -->
+                    <div class="community-section" id="pet-friendly">
+                        <h2>Pet-Friendly Businesses</h2>
+                        <p>Discover businesses that welcome pets.</p>
+                    </div>
+                    
+                    <!-- Events Section -->
+                    <div class="community-section" id="events">
+                        <h2>Events</h2>
+                        <p>Upcoming pet-related events in your area.</p>
+                    </div>
+                    
+                    <!-- Forums Section -->
+                    <div class="community-section" id="forums">
+                        <h2>Forums</h2>
+                        <p>Join discussions with other pet owners.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="script.js" type="module"></script>
+    </body>
+</html>
