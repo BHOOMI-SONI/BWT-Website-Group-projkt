@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Snugbuddies | Pet Adoption</title>
         <link rel="stylesheet" href="styles.css" />
+        <script type="module" src="script.js"></script>
     </head>
     <body>
         <!-- Navigation Bar (appears on scroll) -->
@@ -17,9 +18,30 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Adopt</a></li>
-                <li><a href="#">Donate</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Pet Services <span class="dropdown-icon">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Grooming</a></li>
+                        <li><a href="#">Food & Meds</a></li>
+                        <li><a href="#">Vets Near You</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Pet Education <span class="dropdown-icon">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Pet School</a></li>
+                        <li><a href="#">Training Tips</a></li>
+                        <li><a href="#">Care Guides</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Community <span class="dropdown-icon">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Pet-Friendly Businesses</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
 
@@ -48,7 +70,7 @@
             <div class="pet-type-tiles">
                 <div class="pet-tile" id="dogTile">
                     <div class="pet-tile-image">
-                        <img src="images/dog-silhouette.svg" alt="Dog" onerror="this.src='https://via.placeholder.com/150?text=Dog'">
+                        <img src="images/dog-silhouette.svg" alt="Dog" onerror="this.src='images/work-in-progress.svg'">
                     </div>
                     <h3>Dogs</h3>
                     <p>Loyal companions ready for adventure</p>
@@ -56,7 +78,7 @@
                 
                 <div class="pet-tile" id="catTile">
                     <div class="pet-tile-image">
-                        <img src="images/cat-silhouette.svg" alt="Cat" onerror="this.src='https://via.placeholder.com/150?text=Cat'">
+                        <img src="images/cat-silhouette.svg" alt="Cat" onerror="this.src='images/work-in-progress.svg'">
                     </div>
                     <h3>Cats</h3>
                     <p>Purr-fect friends for your home</p>
@@ -70,7 +92,7 @@
                     <!-- Pet Card 1 -->
                     <div class="pet-card">
                         <div class="pet-card-image">
-                            <img src="/images/pets/british-shorthair.jpg" alt="British Shorthair" onerror="this.src='https://via.placeholder.com/200x150?text=Cat'">
+                            <img src="/images/pets/british-shorthair.jpg" alt="British Shorthair" onerror="this.src='images/work-in-progress.svg'">
                         </div>
                         <div class="pet-card-content">
                             <h4>British Shorthair</h4>
@@ -86,7 +108,7 @@
                     <!-- Pet Card 2 -->
                     <div class="pet-card">
                         <div class="pet-card-image">
-                            <img src="/images/pets/golden-retriever.jpg" alt="Golden Retriever" onerror="this.src='https://via.placeholder.com/200x150?text=Dog'">
+                            <img src="/images/pets/golden-retriever.jpg" alt="Golden Retriever" onerror="this.src='images/work-in-progress.svg'">
                         </div>
                         <div class="pet-card-content">
                             <h4>Golden Retriever</h4>
@@ -102,7 +124,7 @@
                     <!-- Pet Card 3 -->
                     <div class="pet-card">
                         <div class="pet-card-image">
-                            <img src="/images/pets/parrot.jpg" alt="Parrot" onerror="this.src='https://via.placeholder.com/200x150?text=Bird'">
+                            <img src="/images/pets/parrot.jpg" alt="Parrot" onerror="this.src='images/work-in-progress.svg'">
                         </div>
                         <div class="pet-card-content">
                             <h4>Macaw Parrot</h4>
@@ -118,7 +140,7 @@
                     <!-- Pet Card 4 -->
                     <div class="pet-card">
                         <div class="pet-card-image">
-                            <img src="/images/pets/labrador.jpg" alt="Labrador" onerror="this.src='https://via.placeholder.com/200x150?text=Dog'">
+                            <img src="/images/pets/labrador.jpg" alt="Labrador" onerror="this.src='images/work-in-progress.svg'">
                         </div>
                         <div class="pet-card-content">
                             <h4>Labrador Retriever</h4>
@@ -134,7 +156,7 @@
                     <!-- Pet Card 5 -->
                     <div class="pet-card">
                         <div class="pet-card-image">
-                            <img src="/images/pets/siamese-cat.jpg" alt="Siamese Cat" onerror="this.src='https://via.placeholder.com/200x150?text=Cat'">
+                            <img src="/images/pets/siamese-cat.jpg" alt="Siamese Cat" onerror="this.src='images/work-in-progress.svg'">
                         </div>
                         <div class="pet-card-content">
                             <h4>Siamese Cat</h4>
@@ -150,7 +172,7 @@
                     <!-- Pet Card 6 -->
                     <div class="pet-card">
                         <div class="pet-card-image">
-                            <img src="/images/pets/beagle.jpg" alt="Beagle" onerror="this.src='https://via.placeholder.com/200x150?text=Dog'">
+                            <img src="/images/pets/beagle.jpg" alt="Beagle" onerror="this.src='images/work-in-progress.svg'">
                         </div>
                         <div class="pet-card-content">
                             <h4>Beagle</h4>
@@ -166,7 +188,7 @@
                     <!-- Pet Card 7 -->
                     <div class="pet-card">
                         <div class="pet-card-image">
-                            <img src="/images/pets/maine-coon.jpg" alt="Maine Coon" onerror="this.src='https://via.placeholder.com/200x150?text=Cat'">
+                            <img src="/images/pets/maine-coon.jpg" alt="Maine Coon" onerror="this.src='images/work-in-progress.svg'">
                         </div>
                         <div class="pet-card-content">
                             <h4>Maine Coon</h4>
@@ -182,7 +204,7 @@
                     <!-- Pet Card 8 -->
                     <div class="pet-card">
                         <div class="pet-card-image">
-                            <img src="/images/pets/pomeranian.jpg" alt="Pomeranian" onerror="this.src='https://via.placeholder.com/200x150?text=Dog'">
+                            <img src="/images/pets/pomeranian.jpg" alt="Pomeranian" onerror="this.src='images/work-in-progress.svg'">
                         </div>
                         <div class="pet-card-content">
                             <h4>Pomeranian</h4>
@@ -204,12 +226,12 @@
                 <!--Bhoomi Your Part :)   -->
                 <div class="pets">
                 <div class="collage">
-                  <img src="images/golden_retriever.jpg" alt="Golden Retriever">
-                  <img src="images/labrador.jpg" alt="Labrador">
-                  <img src="images/siamese_cat.jpg" alt="Siamese Cat">
-                  <img src="images/bombay_cat.jpg" alt="Bombay Cat">
-                  <img src="images/syrian_hamster.jpg" alt="Syrian Hamster">
-                  <img src="images/WinterWhite_hamster.jpg" alt="Winter white dwarf Hamster">
+                  <img src="images/golden_retriever.jpg" alt="Golden Retriever" onerror="this.src='images/work-in-progress.svg'">
+                  <img src="images/labrador.jpg" alt="Labrador" onerror="this.src='images/work-in-progress.svg'">
+                  <img src="images/siamese_cat.jpg" alt="Siamese Cat" onerror="this.src='images/work-in-progress.svg'">
+                  <img src="images/bombay_cat.jpg" alt="Bombay Cat" onerror="this.src='images/work-in-progress.svg'">
+                  <img src="images/syrian_hamster.jpg" alt="Syrian Hamster" onerror="this.src='images/work-in-progress.svg'">
+                  <img src="images/WinterWhite_hamster.jpg" alt="Winter white dwarf Hamster" onerror="this.src='images/work-in-progress.svg'">
                   <!-- Can Add more images as needed -->
                 </div>
                 <div class="text">

@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load random pets for the catalogue display
     loadRandomPets();
     
-    // Function to load and display random pets in the catalogue
+    // Function to load and display pets in the catalogue
+    // DEVELOPER NOTE: This function populates the pet cards from petData.js
+    // To add more pets, update the petsBySpecies object in Data/petData.js
+    // with proper pet information following the existing structure
     function loadRandomPets() {
         // Try to get pets from the imported data
         try {
@@ -16,21 +19,56 @@ document.addEventListener('DOMContentLoaded', function() {
             const petCardsContainer = document.querySelector('.pet-cards-container');
             
             // If we have pets data and the container exists
-            if (allPets && allPets.length > 0 && petCardsContainer) {
+            if (allPets && petCardsContainer) {
                 // Clear existing static cards
                 petCardsContainer.innerHTML = '';
                 
-                // Get up to 4 random pets
-                const randomPets = getRandomPets(allPets, 4);
-                
-                // Create and append pet cards
-                randomPets.forEach(pet => {
-                    const petCard = createPetCard(pet);
-                    petCardsContainer.appendChild(petCard);
-                });
+                // If we have pets in the data file, display them
+                if (allPets.length > 0) {
+                    // Get up to 8 random pets to display
+                    const randomPets = getRandomPets(allPets, 8);
+                    
+                    // Create and append pet cards
+                    randomPets.forEach(pet => {
+                        const petCard = createPetCard(pet);
+                        petCardsContainer.appendChild(petCard);
+                    });
+                } else {
+                    // If no pets data is available, create placeholder cards
+                    for (let i = 0; i < 8; i++) {
+                        const placeholderPet = {
+                            name: "Data not present",
+                            description: "Pet data will be loaded from petData.js when available",
+                            size: "Unknown",
+                            energyLevel: "Unknown"
+                        };
+                        const petCard = createPetCard(placeholderPet);
+                        petCardsContainer.appendChild(petCard);
+                    }
+                }
             }
         } catch (error) {
             console.error('Error loading pet data:', error);
+            // If error occurs, create placeholder cards
+            createPlaceholderCards();
+        }
+    }
+    
+    // Function to create placeholder cards when data is not available
+    function createPlaceholderCards() {
+        const petCardsContainer = document.querySelector('.pet-cards-container');
+        if (petCardsContainer) {
+            petCardsContainer.innerHTML = '';
+            for (let i = 0; i < 8; i++) {
+                const placeholderPet = {
+                    name: "Data not present",
+                    description: "Pet data will be loaded from petData.js when available",
+                    size: "Unknown",
+                    energyLevel: "Unknown"
+                };
+                const petCard = createPetCard(placeholderPet);
+                petCardsContainer.appendChild(petCard);
+            }
         }
     }
     
@@ -48,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.innerHTML = `
             <div class="pet-card-image">
                 <img src="${pet.imageUrl || ''}" alt="${pet.name}" 
-                     onerror="this.src='https://via.placeholder.com/200x150?text=${pet.species}'">
+                     onerror="this.src='images/work-in-progress.svg'">
             </div>
             <div class="pet-card-content">
                 <h4>${pet.name}</h4>
@@ -85,6 +123,49 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.remove('visible');
         }
     }
+    
+    // Dropdown menu functionality
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    // Function to close all dropdowns
+    function closeAllDropdowns() {
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
+    }
+    
+    // Handle dropdown toggles
+    dropdowns.forEach(dropdown => {
+        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+        
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const isActive = dropdown.classList.contains('active');
+            
+            // Close all dropdowns first
+            closeAllDropdowns();
+            
+            // If the clicked dropdown wasn't active, open it
+            if (!isActive) {
+                dropdown.classList.add('active');
+            }
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function() {
+        closeAllDropdowns();
+    });
+    
+    // Prevent dropdown menu clicks from closing the dropdown
+    const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+    dropdownMenus.forEach(menu => {
+        menu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    });
     
     // Function to open popup
     function openPopup() {
@@ -136,6 +217,11 @@ document.addEventListener('DOMContentLoaded', function() {
         menuToggle.addEventListener('click', function() {
             menuToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
+            
+            // Close all dropdowns when toggling the mobile menu
+            if (!navLinks.classList.contains('active')) {
+                closeAllDropdowns();
+            }
         });
         
         // Close mobile menu when a nav link is clicked
