@@ -166,7 +166,7 @@ body {
     margin-top: 0.5rem;
     display: inline-block;
     text-decoration: none;
-    float: right;
+    margin-left: auto;
 }
 
 .pet-adopt-btn:hover {
