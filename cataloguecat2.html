@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cat Adoption Catalogue</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background-color: #fff8f0;
+    }
+
+    
+    .cat-hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #ffe8b3, #ffe0a8);
+      color: #333;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cat-hero h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      position: relative;
+      display: inline-block;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    .cat-hero p {
+      font-size: 1.2rem;
+      color: #444;
+      margin-top: 0.2rem;
+      animation: fadeIn 2s ease-out forwards;
+    }
+
+    .paws {
+      font-size: 1.8rem;
+      margin-left: 0.4rem;
+      animation: bounce 1.5s infinite;
+      display: inline-block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+ 
+
+    .catalogue {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .cat-card {
+      background-color: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .cat-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .cat-info {
+      padding: 1rem;
+    }
+
+    .cat-info h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.25rem;
+      color: #d67b5b;
+    }
+
+    .cat-info p {
+      margin: 0.25rem 0;
+      font-size: 0.95rem;
+    }
+
+    .cat-info span {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+    <section class="cat-hero">
+        <h2>Meet Our Lovely Cats <span class="paws">🐾🐾</span></h2>
+        <p>Looking for a furry friend? Adopt one today!</p>
+      </section>
+    
+
+  <section class="catalogue">
+    
+    <div class="cat-card">
+      <img src="https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?cs=srgb&dl=pexels-pixabay-104827.jpg&fm=jpg&_gl=1*oxjym2*_ga*NDA4Mjk0NDIxLjE3NDM5Mjc1MzA.*_ga_8JE65Q40S6*MTc0NTM1MDIxNi4yLjAuMTc0NTM1MDIxNi4wLjAuMA.." alt="Cat 1">
+      <div class="cat-info">
+        <h2>Luna</h2>
+        <p><span>Age:</span> 2 years</p>
+        <p>Luna is a playful tabby who loves cuddles and feather toys.</p>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <img src="https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cat 2">
+      <div class="cat-info">
+        <h2>Max</h2>
+        <p><span>Age:</span> 1 year</p>
+        <p>Max is a curious explorer and loves window-watching.</p>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <img src="https://images.pexels.com/photos/1472999/pexels-photo-1472999.jpeg?cs=srgb&dl=pexels-wolpido-1472999.jpg&fm=jpg&_gl=1*h63jmo*_ga*NDA4Mjk0NDIxLjE3NDM5Mjc1MzA.*_ga_8JE65Q40S6*MTc0NTM1MDIxNi4yLjAuMTc0NTM1MDIxNi4wLjAuMA.." alt="Cat 3">
+      <div class="cat-info">
+        <h2>Whiskers</h2>
+        <p><span>Age:</span> 3 years</p>
+        <p>A calm and gentle kitty who enjoys belly rubs.</p>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <img src="https://images.pexels.com/photos/982314/pexels-photo-982314.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cat 4">
+      <div class="cat-info">
+        <h2>Milo</h2>
+        <p><span>Age:</span> 4 months</p>
+        <p>Milo is full of energy and loves to chase anything that moves.</p>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <img src="https://images.pexels.com/photos/691583/pexels-photo-691583.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cat 5">
+      <div class="cat-info">
+        <h2>Bella</h2>
+        <p><span>Age:</span> 5 years</p>
+        <p>Bella is a calm senior cat who enjoys sunbathing.</p>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <img src="https://images.pexels.com/photos/1302290/pexels-photo-1302290.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cat 6">
+      <div class="cat-info">
+        <h2>Simba</h2>
+        <p><span>Age:</span> 2.5 years</p>
+        <p>Simba is adventurous and gets along great with kids.</p>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <img src="https://images.pexels.com/photos/3777622/pexels-photo-3777622.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cat 7">
+      <div class="cat-info">
+        <h2>Cleo</h2>
+        <p><span>Age:</span> 1.5 years</p>
+        <p>Elegant and affectionate, Cleo is a lap cat through and through.</p>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <img src="https://images.pexels.com/photos/368890/pexels-photo-368890.jpeg?cs=srgb&dl=pexels-tranmautritam-368890.jpg&fm=jpg&_gl=1*14aizyh*_ga*NDA4Mjk0NDIxLjE3NDM5Mjc1MzA.*_ga_8JE65Q40S6*MTc0NTM1MDIxNi4yLjEuMTc0NTM1MDU3MC4wLjAuMA.." alt="Cat 8">
+      <div class="cat-info">
+        <h2>Oliver</h2>
+        <p><span>Age:</span> 3 years</p>
+        <p>Oliver is a talkative cat who loves attention and treats.</p>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <img src="https://images.pexels.com/photos/17773/pexels-photo.jpg?cs=srgb&dl=pexels-burakkostak-17773.jpg&fm=jpg&_gl=1*14aizyh*_ga*NDA4Mjk0NDIxLjE3NDM5Mjc1MzA.*_ga_8JE65Q40S6*MTc0NTM1MDIxNi4yLjEuMTc0NTM1MDU3MC4wLjAuMA.." alt="Cat 9">
+      <div class="cat-info">
+        <h2>Nala</h2>
+        <p><span>Age:</span> 6 months</p>
+        <p>Nala is a sweet kitten who loves to nap in your lap.</p>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <img src="https://images.pexels.com/photos/596590/pexels-photo-596590.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cat 10">
+      <div class="cat-info">
+        <h2>Tiger</h2>
+        <p><span>Age:</span> 4 years</p>
+        <p>Tiger is independent but loves a good scratch behind the ears.</p>
+      </div>
+    </div>
+
+    <div class="cat-card">
+        <img src="https://images.pexels.com/photos/731553/pexels-photo-731553.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cat 10">
+        <div class="cat-info">
+          <h2>Tiger</h2>
+          <p><span>Age:</span> 4 years</p>
+          <p>Tiger is independent but loves a good scratch behind the ears.</p>
+        </div>
+      </div>
+      <div class="cat-card">
+        <img src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?cs=srgb&dl=pexels-pixabay-45201.jpg&fm=jpg&_gl=1*ox6xln*_ga*NDA4Mjk0NDIxLjE3NDM5Mjc1MzA.*_ga_8JE65Q40S6*MTc0NTM1MDIxNi4yLjEuMTc0NTM1MDU0Ny4wLjAuMA.." alt="Cat 10">
+        <div class="cat-info">
+          <h2>Tiger</h2>
+          <p><span>Age:</span> 4 years</p>
+          <p>Tiger is independent but loves a good scratch behind the ears.</p>
+        </div>
+      </div>
+  </section>
+</body>
+</html>
