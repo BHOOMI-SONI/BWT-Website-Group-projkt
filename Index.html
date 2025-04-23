@@ -260,7 +260,257 @@
             </div>
         </div>
 
+        <!-- Reviews Section with Horizontal Scrolling -->
+        <section class="reviews-section">
+            <h2>What Our Pet Parents Say</h2>
+            <div class="reviews-container">
+                <div class="reviews-track">
+                    <!-- Review Card 1 -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Our family adopted Max last year, and he has brought so much joy to our lives! The adoption process was smooth and the staff was incredibly helpful."</p>
+                        <div class="reviewer-info">
+                            <img src="images/work-in-progress.svg" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>Adopted Golden Retriever</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review Card 2 -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"I was nervous about adopting a cat for the first time, but the team at Snug Buddies made it so easy! Luna is now my best friend."</p>
+                        <div class="reviewer-info">
+                            <img src="images/work-in-progress.svg" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <h4>Michael Chen</h4>
+                                <p>Adopted Siamese Cat</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review Card 3 -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★</div>
+                        <p class="review-text">"The care guides provided were incredibly helpful for a first-time pet owner. Bella adjusted to her new home quickly thanks to your advice!"</p>
+                        <div class="reviewer-info">
+                            <img src="images/work-in-progress.svg" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <h4>Emily Rodriguez</h4>
+                                <p>Adopted Beagle</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review Card 4 -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"After losing our old dog, we weren't sure if we were ready for another. The staff was patient and helped us find the perfect match in Charlie."</p>
+                        <div class="reviewer-info">
+                            <img src="images/work-in-progress.svg" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <h4>David Wilson</h4>
+                                <p>Adopted Labrador Retriever</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review Card 5 -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"The pet education resources are fantastic! We've learned so much about proper care for our new Maine Coon, and he's thriving!"</p>
+                        <div class="reviewer-info">
+                            <img src="images/work-in-progress.svg" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <h4>Jessica Taylor</h4>
+                                <p>Adopted Maine Coon</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Duplicate cards for continuous scrolling effect -->
+                    <!-- Review Card 1 (Duplicate) -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Our family adopted Max last year, and he has brought so much joy to our lives! The adoption process was smooth and the staff was incredibly helpful."</p>
+                        <div class="reviewer-info">
+                            <img src="images/work-in-progress.svg" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>Adopted Golden Retriever</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review Card 2 (Duplicate) -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"I was nervous about adopting a cat for the first time, but the team at Snug Buddies made it so easy! Luna is now my best friend."</p>
+                        <div class="reviewer-info">
+                            <img src="images/work-in-progress.svg" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <h4>Michael Chen</h4>
+                                <p>Adopted Siamese Cat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add CSS for Reviews Section -->
+        <style>
+            .reviews-section {
+                padding: 4rem 2rem;
+                position: relative;
+                text-align: center;
+                overflow: hidden;
+                color: #333;
+                position: relative;
+            }
+            
+            /* Acrylic effect background similar to hero section */
+            .reviews-section::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(to right, #f8f9fa, #e9ecef);
+                z-index: -2;
+            }
+            
+            .reviews-section::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                background-color: rgba(255, 255, 255, 0.2);
+                z-index: -1;
+            }
+            
+            .reviews-section h2 {
+                margin-bottom: 2rem;
+                color: #333;
+                font-size: 2rem;
+                position: relative;
+            }
+            
+            .reviews-container {
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+                padding: 1rem 0;
+            }
+            
+            .reviews-track {
+                display: flex;
+                width: max-content;
+                animation: scroll 75s linear infinite;
+            }
+            
+            .review-card {
+                width: 350px;
+                padding: 1.5rem;
+                margin: 0 1rem;
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+                text-align: left;
+                flex-shrink: 0;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+            
+            .review-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            }
+            
+            .review-stars {
+                color: #FFD700;
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .review-text {
+                font-style: italic;
+                margin-bottom: 1rem;
+                line-height: 1.6;
+                color: #555;
+            }
+            
+            .reviewer-info {
+                display: flex;
+                align-items: center;
+                border-top: 1px solid rgba(0, 0, 0, 0.05);
+                padding-top: 0.75rem;
+                margin-top: 0.5rem;
+            }
+            
+            .reviewer-img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin-right: 1rem;
+                object-fit: cover;
+                border: 2px solid #f0f0f0;
+            }
+            
+            .reviewer-info h4 {
+                margin: 0;
+                font-size: 1rem;
+                color: #333;
+            }
+            
+            .reviewer-info p {
+                margin: 0;
+                font-size: 0.8rem;
+                color: #007bff;
+            }
+            
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-350px * 5 - 2rem * 5)); /* Width of 5 cards + their margins */
+                }
+            }
+            
+            /* Pause animation on hover */
+            .reviews-container:hover .reviews-track {
+                animation-play-state: paused;
+            }
+            
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .review-card {
+                    width: 280px;
+                }
+                
+                @keyframes scroll {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(calc(-280px * 5 - 2rem * 5));
+                    }
+                }
+            }
+        </style>
+        
         <!-- JavaScript -->
         <script src="script.js" type="module"></script>
     </body>
 </html>
+
