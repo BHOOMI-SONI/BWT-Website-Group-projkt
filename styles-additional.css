@@ -1,0 +1,29 @@
+.pet-tile-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.pet-tile-link:hover {
+    transform: translateY(-5px);
+}
+
+.page-content {
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.content-placeholder {
+    margin-top: 3rem;
+    padding: 2rem;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    text-align: center;
+}

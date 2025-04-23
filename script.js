@@ -1,7 +1,106 @@
 // Main JavaScript for Pet Adoption Website
 
+// Import pet data
+import { getAllPets, getPetsBySpecies } from './Data/petData.js';
+
 // Function to handle the navigation bar appearance on scroll and popup functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Load random pets for the catalogue display
+    loadRandomPets();
+    
+    // Function to load and display pets in the catalogue
+    // DEVELOPER NOTE: This function populates the pet cards from petData.js
+    // To add more pets, update the petsBySpecies object in Data/petData.js
+    // with proper pet information following the existing structure
+    function loadRandomPets() {
+        // Try to get pets from the imported data
+        try {
+            const allPets = getAllPets();
+            const petCardsContainer = document.querySelector('.pet-cards-container');
+            
+            // If we have pets data and the container exists
+            if (allPets && petCardsContainer) {
+                // Clear existing static cards
+                petCardsContainer.innerHTML = '';
+                
+                // If we have pets in the data file, display them
+                if (allPets.length > 0) {
+                    // Get up to 8 random pets to display
+                    const randomPets = getRandomPets(allPets, 8);
+                    
+                    // Create and append pet cards
+                    randomPets.forEach(pet => {
+                        const petCard = createPetCard(pet);
+                        petCardsContainer.appendChild(petCard);
+                    });
+                } else {
+                    // If no pets data is available, create placeholder cards
+                    for (let i = 0; i < 8; i++) {
+                        const placeholderPet = {
+                            name: "Data not present",
+                            description: "Pet data will be loaded from petData.js when available",
+                            size: "Unknown",
+                            energyLevel: "Unknown"
+                        };
+                        const petCard = createPetCard(placeholderPet);
+                        petCardsContainer.appendChild(petCard);
+                    }
+                }
+            }
+        } catch (error) {
+            console.error('Error loading pet data:', error);
+            // If error occurs, create placeholder cards
+            createPlaceholderCards();
+        }
+    }
+    
+    // Function to create placeholder cards when data is not available
+    function createPlaceholderCards() {
+        const petCardsContainer = document.querySelector('.pet-cards-container');
+        if (petCardsContainer) {
+            petCardsContainer.innerHTML = '';
+            for (let i = 0; i < 8; i++) {
+                const placeholderPet = {
+                    name: "Data not present",
+                    description: "Pet data will be loaded from petData.js when available",
+                    size: "Unknown",
+                    energyLevel: "Unknown"
+                };
+                const petCard = createPetCard(placeholderPet);
+                petCardsContainer.appendChild(petCard);
+            }
+        }
+    }
+    
+    // Function to get random pets from the array
+    function getRandomPets(petsArray, count) {
+        const shuffled = [...petsArray].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
+    }
+    
+    // Function to create a pet card element
+    function createPetCard(pet) {
+        const card = document.createElement('div');
+        card.className = 'pet-card';
+        
+        card.innerHTML = `
+            <div class="pet-card-image">
+                <img src="${pet.imageUrl || ''}" alt="${pet.name}" 
+                     onerror="this.src='images/work-in-progress.svg'">
+            </div>
+            <div class="pet-card-content">
+                <h4>${pet.name}</h4>
+                <p class="pet-description">${pet.description || 'Lovely pet looking for a home'}</p>
+                <div class="pet-details">
+                    <span class="pet-attribute">Size: ${pet.size || 'Medium'}</span>
+                    <span class="pet-attribute">Energy: ${pet.energyLevel || 'Medium'}</span>
+                </div>
+                <a href="#" class="pet-adopt-btn">Learn More</a>
+            </div>
+        `;
+        
+        return card;
+    }
     const navbar = document.querySelector('.navbar');
     const heroSection = document.querySelector('.hero');
     const getPetBtn = document.getElementById('getPetBtn');
@@ -24,6 +123,49 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.remove('visible');
         }
     }
+    
+    // Dropdown menu functionality
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    // Function to close all dropdowns
+    function closeAllDropdowns() {
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
+    }
+    
+    // Handle dropdown toggles
+    dropdowns.forEach(dropdown => {
+        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+        
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const isActive = dropdown.classList.contains('active');
+            
+            // Close all dropdowns first
+            closeAllDropdowns();
+            
+            // If the clicked dropdown wasn't active, open it
+            if (!isActive) {
+                dropdown.classList.add('active');
+            }
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function() {
+        closeAllDropdowns();
+    });
+    
+    // Prevent dropdown menu clicks from closing the dropdown
+    const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+    dropdownMenus.forEach(menu => {
+        menu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    });
     
     // Function to open popup
     function openPopup() {
@@ -75,6 +217,11 @@ document.addEventListener('DOMContentLoaded', function() {
         menuToggle.addEventListener('click', function() {
             menuToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
+            
+            // Close all dropdowns when toggling the mobile menu
+            if (!navLinks.classList.contains('active')) {
+                closeAllDropdowns();
+            }
         });
         
         // Close mobile menu when a nav link is clicked
