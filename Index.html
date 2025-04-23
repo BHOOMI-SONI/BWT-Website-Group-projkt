@@ -1,50 +1,242 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snug Buddies | Pet Adoption</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Navigation Bar (appears on scroll) -->
-    <nav class="navbar">
-        <a href="#" class="logo">Snug Buddies</a>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Adopt</a></li>
-            <li><a href="#">Donate</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Snugbuddies | Pet Adoption</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="styles-additional.css" />
+        <script type="module" src="script.js"></script>
+    </head>
+    <body>
+        <!-- Navigation Bar (appears on scroll) -->
+        <nav class="navbar">
+            <a href="#" class="logo">Snug Buddies</a>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="Index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="pet-services.html" class="dropdown-toggle">Pet Services <span class="dropdown-icon">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pet-services.html#grooming">Grooming</a></li>
+                        <li><a href="pet-services.html#food-meds">Food & Meds</a></li>
+                        <li><a href="pet-services.html#vets">Vets Near You</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="pet-education.html" class="dropdown-toggle">Pet Education <span class="dropdown-icon">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pet-education.html#pet-school">Pet School</a></li>
+                        <li><a href="pet-education.html#training-tips">Training Tips</a></li>
+                        <li><a href="pet-education.html#care-guides">Care Guides</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="community.html" class="dropdown-toggle">Community <span class="dropdown-icon">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="community.html#pet-friendly">Pet-Friendly Businesses</a></li>
+                        <li><a href="community.html#events">Events</a></li>
+                        <li><a href="community.html#forums">Forums</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
 
-    <!-- Hero Section with Acrylic Effect -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>One More Friend Thousands more fun</h1>
-            <p>Discover loving companions waiting for their forever homes. Our adoption process connects pets with caring families.</p>
-            <a href="#" class="cta-button" id="getPetBtn">Get a Pet !!</a>
-        </div>
-    </section>
+        <!-- Hero Section with Acrylic Effect -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>One More Friend Thousands more fun</h1>
+                <p>
+                    Discover loving companions waiting for their forever homes.
+                    Our adoption process connects pets with caring families.
+                </p>
+                <a href="#" class="cta-button" id="getPetBtn">Get a Pet !!</a>
+            </div>
+        </section>
 
-    <!-- Main Content Section (placeholder) -->
-    <section style="height: 100vh; padding: 2rem; background-color: #f8f9fa;">
-        <h2 style="text-align: center; margin-bottom: 2rem;">Our Adorable Pets</h2>
-        <p style="text-align: center;">This section will contain pet listings and more content.</p>
-    </section>
-    
-    <!-- Popup Container (initially hidden) -->
-    <div class="popup-overlay" id="petPopup">
-        <div class="popup-content">
-            <!--Bhoomi Your Part :)   -->
-            <div class="pets">
+        <!-- Main Content Section with Pet Type Selection -->
+        <section class="catalogue-section" style="min-height: 100vh; padding: 2rem; background-color: #f8f9fa">
+            <h2 style="text-align: center; margin-bottom: 2rem">
+                Our Adorable Pets :)
+            </h2>
+            <p style="text-align: center; margin-bottom: 3rem">
+                Choose a pet type below to browse our available animals.
+            </p>
+            
+            <!-- Pet Type Selection Tiles -->
+            <div class="pet-type-tiles">
+                <a href="dogs.html" class="pet-tile-link">
+                    <div class="pet-tile" id="dogTile">
+                        <div class="pet-tile-image">
+                            <img src="images/dog-silhouette.svg" alt="Dog" onerror="this.src='images/work-in-progress.svg'">
+                        </div>
+                        <h3>Dogs</h3>
+                        <p>Loyal companions ready for adventure</p>
+                    </div>
+                </a>
+                
+                <a href="cats.html" class="pet-tile-link">
+                    <div class="pet-tile" id="catTile">
+                        <div class="pet-tile-image">
+                            <img src="images/cat-silhouette.svg" alt="Cat" onerror="this.src='images/work-in-progress.svg'">
+                        </div>
+                        <h3>Cats</h3>
+                        <p>Purr-fect friends for your home</p>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Pet Catalogue Display -->
+            <div class="pet-catalogue">
+                <h3 style="text-align: center; margin: 3rem 0 1.5rem">Featured Pets</h3>
+                <div class="pet-cards-container">
+                    <!-- Pet Card 1 -->
+                    <div class="pet-card">
+                        <div class="pet-card-image">
+                            <img src="/images/pets/british-shorthair.jpg" alt="British Shorthair" onerror="this.src='images/work-in-progress.svg'">
+                        </div>
+                        <div class="pet-card-content">
+                            <h4>British Shorthair</h4>
+                            <p class="pet-description">Calm, affectionate companions</p>
+                            <div class="pet-details">
+                                <span class="pet-attribute">Size: Medium</span>
+                                <span class="pet-attribute">Energy: Low</span>
+                            </div>
+                            <a href="#" class="pet-adopt-btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Pet Card 2 -->
+                    <div class="pet-card">
+                        <div class="pet-card-image">
+                            <img src="/images/pets/golden-retriever.jpg" alt="Golden Retriever" onerror="this.src='images/work-in-progress.svg'">
+                        </div>
+                        <div class="pet-card-content">
+                            <h4>Golden Retriever</h4>
+                            <p class="pet-description">Friendly and intelligent companions</p>
+                            <div class="pet-details">
+                                <span class="pet-attribute">Size: Large</span>
+                                <span class="pet-attribute">Energy: High</span>
+                            </div>
+                            <a href="#" class="pet-adopt-btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Pet Card 3 -->
+                    <div class="pet-card">
+                        <div class="pet-card-image">
+                            <img src="/images/pets/parrot.jpg" alt="Parrot" onerror="this.src='images/work-in-progress.svg'">
+                        </div>
+                        <div class="pet-card-content">
+                            <h4>Macaw Parrot</h4>
+                            <p class="pet-description">Colorful and intelligent birds</p>
+                            <div class="pet-details">
+                                <span class="pet-attribute">Size: Medium</span>
+                                <span class="pet-attribute">Lifespan: 50+ years</span>
+                            </div>
+                            <a href="#" class="pet-adopt-btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Pet Card 4 -->
+                    <div class="pet-card">
+                        <div class="pet-card-image">
+                            <img src="/images/pets/labrador.jpg" alt="Labrador" onerror="this.src='images/work-in-progress.svg'">
+                        </div>
+                        <div class="pet-card-content">
+                            <h4>Labrador Retriever</h4>
+                            <p class="pet-description">Friendly and outgoing companions</p>
+                            <div class="pet-details">
+                                <span class="pet-attribute">Size: Large</span>
+                                <span class="pet-attribute">Energy: High</span>
+                            </div>
+                            <a href="#" class="pet-adopt-btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Pet Card 5 -->
+                    <div class="pet-card">
+                        <div class="pet-card-image">
+                            <img src="/images/pets/siamese-cat.jpg" alt="Siamese Cat" onerror="this.src='images/work-in-progress.svg'">
+                        </div>
+                        <div class="pet-card-content">
+                            <h4>Siamese Cat</h4>
+                            <p class="pet-description">Vocal and affectionate felines</p>
+                            <div class="pet-details">
+                                <span class="pet-attribute">Size: Medium</span>
+                                <span class="pet-attribute">Energy: Medium</span>
+                            </div>
+                            <a href="#" class="pet-adopt-btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Pet Card 6 -->
+                    <div class="pet-card">
+                        <div class="pet-card-image">
+                            <img src="/images/pets/beagle.jpg" alt="Beagle" onerror="this.src='images/work-in-progress.svg'">
+                        </div>
+                        <div class="pet-card-content">
+                            <h4>Beagle</h4>
+                            <p class="pet-description">Curious and merry little hounds</p>
+                            <div class="pet-details">
+                                <span class="pet-attribute">Size: Medium</span>
+                                <span class="pet-attribute">Energy: High</span>
+                            </div>
+                            <a href="#" class="pet-adopt-btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Pet Card 7 -->
+                    <div class="pet-card">
+                        <div class="pet-card-image">
+                            <img src="/images/pets/maine-coon.jpg" alt="Maine Coon" onerror="this.src='images/work-in-progress.svg'">
+                        </div>
+                        <div class="pet-card-content">
+                            <h4>Maine Coon</h4>
+                            <p class="pet-description">Gentle giants with playful personalities</p>
+                            <div class="pet-details">
+                                <span class="pet-attribute">Size: Large</span>
+                                <span class="pet-attribute">Energy: Medium</span>
+                            </div>
+                            <a href="#" class="pet-adopt-btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Pet Card 8 -->
+                    <div class="pet-card">
+                        <div class="pet-card-image">
+                            <img src="/images/pets/pomeranian.jpg" alt="Pomeranian" onerror="this.src='images/work-in-progress.svg'">
+                        </div>
+                        <div class="pet-card-content">
+                            <h4>Pomeranian</h4>
+                            <p class="pet-description">Lively and bold little companions</p>
+                            <div class="pet-details">
+                                <span class="pet-attribute">Size: Small</span>
+                                <span class="pet-attribute">Energy: High</span>
+                            </div>
+                            <a href="#" class="pet-adopt-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popup Container (initially hidden) -->
+        <div class="popup-overlay" id="petPopup">
+            <div class="popup-content">
+                <!--Bhoomi Your Part :)   -->
+                <div class="pets">
                 <div class="collage">
-                  <img src="images/golden_retriever.jpg" alt="Golden Retriever">
-                  <img src="images/labrador.jpg" alt="Labrador">
-                  <img src="images/siamese_cat.jpg" alt="Siamese Cat">
-                  <img src="images/bombay_cat.jpg" alt="Bombay Cat">
-                  <img src="images/syrian_hamster.jpg" alt="Syrian Hamster">
-                  <img src="images/WinterWhite_hamster.jpg" alt="Winter white dwarf Hamster">
+                  <img src="images/golden_retriever.jpg" alt="Golden Retriever" onerror="this.src='images/work-in-progress.svg'">
+                  <img src="images/labrador.jpg" alt="Labrador" onerror="this.src='images/work-in-progress.svg'">
+                  <img src="images/siamese_cat.jpg" alt="Siamese Cat" onerror="this.src='images/work-in-progress.svg'">
+                  <img src="images/bombay_cat.jpg" alt="Bombay Cat" onerror="this.src='images/work-in-progress.svg'">
+                  <img src="images/syrian_hamster.jpg" alt="Syrian Hamster" onerror="this.src='images/work-in-progress.svg'">
+                  <img src="images/WinterWhite_hamster.jpg" alt="Winter white dwarf Hamster" onerror="this.src='images/work-in-progress.svg'">
                   <!-- Can Add more images as needed -->
                 </div>
                 <div class="text">
@@ -56,14 +248,269 @@
                   
                 </div>
               </div>
-            <div class="popup-buttons">
-                <button class="popup-button" id="getPetRecommendedBtn">Get a Pet Recommended</button>
-                <button class="popup-button" id="viewCatalogueBtn">View Catalogue</button>
+                  
+                <div class="popup-buttons">
+                    <button class="popup-button" id="getPetRecommendedBtn">
+                        Get a Pet Recommended
+                    </button>
+                    <button class="popup-button" id="viewCatalogueBtn">
+                        View Catalogue
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-</body>
+        <!-- Reviews Section with Horizontal Scrolling -->
+        <section class="reviews-section">
+            <h2>What Our Pet Parents Say</h2>
+            <div class="reviews-container">
+                <div class="reviews-track">
+                    <!-- Review Card 1 -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Our family adopted Max last year, and he has brought so much joy to our lives! The adoption process was smooth and the staff was incredibly helpful."</p>
+                        <div class="reviewer-info">
+                            <img src="images/work-in-progress.svg" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>Adopted Golden Retriever</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review Card 2 -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"I was nervous about adopting a cat for the first time, but the team at Snug Buddies made it so easy! Luna is now my best friend."</p>
+                        <div class="reviewer-info">
+                            <img src="images/work-in-progress.svg" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <h4>Michael Chen</h4>
+                                <p>Adopted Siamese Cat</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review Card 3 -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★</div>
+                        <p class="review-text">"The care guides provided were incredibly helpful for a first-time pet owner. Bella adjusted to her new home quickly thanks to your advice!"</p>
+                        <div class="reviewer-info">
+                            <img src="images/work-in-progress.svg" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <h4>Emily Rodriguez</h4>
+                                <p>Adopted Beagle</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review Card 4 -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"After losing our old dog, we weren't sure if we were ready for another. The staff was patient and helped us find the perfect match in Charlie."</p>
+                        <div class="reviewer-info">
+                            <img src="images/work-in-progress.svg" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <h4>David Wilson</h4>
+                                <p>Adopted Labrador Retriever</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review Card 5 -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"The pet education resources are fantastic! We've learned so much about proper care for our new Maine Coon, and he's thriving!"</p>
+                        <div class="reviewer-info">
+                            <img src="images/work-in-progress.svg" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <h4>Jessica Taylor</h4>
+                                <p>Adopted Maine Coon</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Duplicate cards for continuous scrolling effect -->
+                    <!-- Review Card 1 (Duplicate) -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Our family adopted Max last year, and he has brought so much joy to our lives! The adoption process was smooth and the staff was incredibly helpful."</p>
+                        <div class="reviewer-info">
+                            <img src="images/work-in-progress.svg" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>Adopted Golden Retriever</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review Card 2 (Duplicate) -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"I was nervous about adopting a cat for the first time, but the team at Snug Buddies made it so easy! Luna is now my best friend."</p>
+                        <div class="reviewer-info">
+                            <img src="images/work-in-progress.svg" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <h4>Michael Chen</h4>
+                                <p>Adopted Siamese Cat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add CSS for Reviews Section -->
+        <style>
+            .reviews-section {
+                padding: 4rem 2rem;
+                position: relative;
+                text-align: center;
+                overflow: hidden;
+                color: #333;
+                position: relative;
+            }
+            
+            /* Acrylic effect background similar to hero section */
+            .reviews-section::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(to right, #f8f9fa, #e9ecef);
+                z-index: -2;
+            }
+            
+            .reviews-section::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                background-color: rgba(255, 255, 255, 0.2);
+                z-index: -1;
+            }
+            
+            .reviews-section h2 {
+                margin-bottom: 2rem;
+                color: #333;
+                font-size: 2rem;
+                position: relative;
+            }
+            
+            .reviews-container {
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+                padding: 1rem 0;
+            }
+            
+            .reviews-track {
+                display: flex;
+                width: max-content;
+                animation: scroll 75s linear infinite;
+            }
+            
+            .review-card {
+                width: 350px;
+                padding: 1.5rem;
+                margin: 0 1rem;
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+                text-align: left;
+                flex-shrink: 0;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+            
+            .review-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            }
+            
+            .review-stars {
+                color: #FFD700;
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .review-text {
+                font-style: italic;
+                margin-bottom: 1rem;
+                line-height: 1.6;
+                color: #555;
+            }
+            
+            .reviewer-info {
+                display: flex;
+                align-items: center;
+                border-top: 1px solid rgba(0, 0, 0, 0.05);
+                padding-top: 0.75rem;
+                margin-top: 0.5rem;
+            }
+            
+            .reviewer-img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin-right: 1rem;
+                object-fit: cover;
+                border: 2px solid #f0f0f0;
+            }
+            
+            .reviewer-info h4 {
+                margin: 0;
+                font-size: 1rem;
+                color: #333;
+            }
+            
+            .reviewer-info p {
+                margin: 0;
+                font-size: 0.8rem;
+                color: #007bff;
+            }
+            
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-350px * 5 - 2rem * 5)); /* Width of 5 cards + their margins */
+                }
+            }
+            
+            /* Pause animation on hover */
+            .reviews-container:hover .reviews-track {
+                animation-play-state: paused;
+            }
+            
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .review-card {
+                    width: 280px;
+                }
+                
+                @keyframes scroll {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(calc(-280px * 5 - 2rem * 5));
+                    }
+                }
+            }
+        </style>
+        
+        <!-- JavaScript -->
+        <script src="script.js" type="module"></script>
+    </body>
 </html>
+
