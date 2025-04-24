@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Cats | Snugbuddies Pet Adoption</title>
         <link rel="stylesheet" href="styles.css" />
+        <script type="module" src="petUtils.js"></script>
         <script type="module" src="script.js"></script>
         <script src="page-specific.js"></script>
         <style>
@@ -220,117 +221,16 @@
         </section>
 
         <!-- Cat Catalogue Section -->
-        <section class="catalogue">
-            <div class="cat-card">
-                <img src="https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?cs=srgb&dl=pexels-pixabay-104827.jpg&fm=jpg" alt="Cat 1">
-                <div class="cat-info">
-                    <h2>Luna</h2>
-                    <p><span>Age:</span> 2 years</p>
-                    <p>Luna is a playful tabby who loves cuddles and feather toys.</p>
-                </div>
-            </div>
-
-            <div class="cat-card">
-                <img src="https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cat 2">
-                <div class="cat-info">
-                    <h2>Max</h2>
-                    <p><span>Age:</span> 1 year</p>
-                    <p>Max is a curious explorer and loves window-watching.</p>
-                </div>
-            </div>
-
-            <div class="cat-card">
-                <img src="https://images.pexels.com/photos/1472999/pexels-photo-1472999.jpeg?cs=srgb&dl=pexels-wolpido-1472999.jpg&fm=jpg" alt="Cat 3">
-                <div class="cat-info">
-                    <h2>Whiskers</h2>
-                    <p><span>Age:</span> 3 years</p>
-                    <p>A calm and gentle kitty who enjoys belly rubs.</p>
-                </div>
-            </div>
-
-            <div class="cat-card">
-                <img src="https://images.pexels.com/photos/982314/pexels-photo-982314.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cat 4">
-                <div class="cat-info">
-                    <h2>Milo</h2>
-                    <p><span>Age:</span> 4 months</p>
-                    <p>Milo is full of energy and loves to chase anything that moves.</p>
-                </div>
-            </div>
-
-            <div class="cat-card">
-                <img src="https://images.pexels.com/photos/691583/pexels-photo-691583.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cat 5">
-                <div class="cat-info">
-                    <h2>Bella</h2>
-                    <p><span>Age:</span> 5 years</p>
-                    <p>Bella is a calm senior cat who enjoys sunbathing.</p>
-                </div>
-            </div>
-
-            <div class="cat-card">
-                <img src="https://images.pexels.com/photos/1302290/pexels-photo-1302290.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cat 6">
-                <div class="cat-info">
-                    <h2>Simba</h2>
-                    <p><span>Age:</span> 2.5 years</p>
-                    <p>Simba is adventurous and gets along great with kids.</p>
-                </div>
-            </div>
-
-            <div class="cat-card">
-                <img src="https://images.pexels.com/photos/3777622/pexels-photo-3777622.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cat 7">
-                <div class="cat-info">
-                    <h2>Cleo</h2>
-                    <p><span>Age:</span> 1.5 years</p>
-                    <p>Elegant and affectionate, Cleo is a lap cat through and through.</p>
-                </div>
-            </div>
-
-            <div class="cat-card">
-                <img src="https://images.pexels.com/photos/368890/pexels-photo-368890.jpeg?cs=srgb&dl=pexels-tranmautritam-368890.jpg&fm=jpg" alt="Cat 8">
-                <div class="cat-info">
-                    <h2>Oliver</h2>
-                    <p><span>Age:</span> 3 years</p>
-                    <p>Oliver is a talkative cat who loves attention and treats.</p>
-                </div>
-            </div>
-
-            <div class="cat-card">
-                <img src="https://images.pexels.com/photos/17773/pexels-photo.jpg?cs=srgb&dl=pexels-burakkostak-17773.jpg&fm=jpg" alt="Cat 9">
-                <div class="cat-info">
-                    <h2>Nala</h2>
-                    <p><span>Age:</span> 6 months</p>
-                    <p>Nala is a sweet kitten who loves to nap in your lap.</p>
-                </div>
-            </div>
-
-            <div class="cat-card">
-                <img src="https://images.pexels.com/photos/596590/pexels-photo-596590.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cat 10">
-                <div class="cat-info">
-                    <h2>Tiger</h2>
-                    <p><span>Age:</span> 4 years</p>
-                    <p>Tiger is independent but loves a good scratch behind the ears.</p>
-                </div>
-            </div>
-
-            <div class="cat-card">
-                <img src="https://images.pexels.com/photos/731553/pexels-photo-731553.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cat 11">
-                <div class="cat-info">
-                    <h2>Mittens</h2>
-                    <p><span>Age:</span> 3 years</p>
-                    <p>Mittens is a playful cat who loves to chase toys and cuddle.</p>
-                </div>
-            </div>
-
-            <div class="cat-card">
-                <img src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?cs=srgb&dl=pexels-pixabay-45201.jpg&fm=jpg" alt="Cat 12">
-                <div class="cat-info">
-                    <h2>Shadow</h2>
-                    <p><span>Age:</span> 2 years</p>
-                    <p>Shadow is a gentle cat who enjoys peaceful naps in sunny spots.</p>
-                </div>
-            </div>
+        <section class="catalogue" id="cat-catalogue">
+            <!-- Cat cards will be dynamically loaded from petData.js -->
         </section>
 
         <!-- JavaScript -->
-        <script src="script.js" type="module"></script>
+        <script type="module">
+            import { initPetData } from './petUtils.js';
+            document.addEventListener('DOMContentLoaded', () => {
+                initPetData();
+            });
+        </script>
     </body>
 </html>

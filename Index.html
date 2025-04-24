@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="styles.css" />
         <link rel="stylesheet" href="styles-additional.css" />
         <script type="module" src="script.js"></script>
+        <script type="module" src="petUtils.js"></script>
     </head>
     <body>
         <!-- Navigation Bar (appears on scroll) -->
@@ -93,134 +94,8 @@
             <!-- Pet Catalogue Display -->
             <div class="pet-catalogue">
                 <h3 style="text-align: center; margin: 3rem 0 1.5rem">Featured Pets</h3>
-                <div class="pet-cards-container">
-                    <!-- Pet Card 1 -->
-                    <div class="pet-card">
-                        <div class="pet-card-image">
-                            <img src="/images/pets/british-shorthair.jpg" alt="British Shorthair" onerror="this.src='images/work-in-progress.svg'">
-                        </div>
-                        <div class="pet-card-content">
-                            <h4>British Shorthair</h4>
-                            <p class="pet-description">Calm, affectionate companions</p>
-                            <div class="pet-details">
-                                <span class="pet-attribute">Size: Medium</span>
-                                <span class="pet-attribute">Energy: Low</span>
-                            </div>
-                            <a href="#" class="pet-adopt-btn">Learn More</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Pet Card 2 -->
-                    <div class="pet-card">
-                        <div class="pet-card-image">
-                            <img src="/images/pets/golden-retriever.jpg" alt="Golden Retriever" onerror="this.src='images/work-in-progress.svg'">
-                        </div>
-                        <div class="pet-card-content">
-                            <h4>Golden Retriever</h4>
-                            <p class="pet-description">Friendly and intelligent companions</p>
-                            <div class="pet-details">
-                                <span class="pet-attribute">Size: Large</span>
-                                <span class="pet-attribute">Energy: High</span>
-                            </div>
-                            <a href="#" class="pet-adopt-btn">Learn More</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Pet Card 3 -->
-                    <div class="pet-card">
-                        <div class="pet-card-image">
-                            <img src="/images/pets/parrot.jpg" alt="Parrot" onerror="this.src='images/work-in-progress.svg'">
-                        </div>
-                        <div class="pet-card-content">
-                            <h4>Macaw Parrot</h4>
-                            <p class="pet-description">Colorful and intelligent birds</p>
-                            <div class="pet-details">
-                                <span class="pet-attribute">Size: Medium</span>
-                                <span class="pet-attribute">Lifespan: 50+ years</span>
-                            </div>
-                            <a href="#" class="pet-adopt-btn">Learn More</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Pet Card 4 -->
-                    <div class="pet-card">
-                        <div class="pet-card-image">
-                            <img src="/images/pets/labrador.jpg" alt="Labrador" onerror="this.src='images/work-in-progress.svg'">
-                        </div>
-                        <div class="pet-card-content">
-                            <h4>Labrador Retriever</h4>
-                            <p class="pet-description">Friendly and outgoing companions</p>
-                            <div class="pet-details">
-                                <span class="pet-attribute">Size: Large</span>
-                                <span class="pet-attribute">Energy: High</span>
-                            </div>
-                            <a href="#" class="pet-adopt-btn">Learn More</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Pet Card 5 -->
-                    <div class="pet-card">
-                        <div class="pet-card-image">
-                            <img src="/images/pets/siamese-cat.jpg" alt="Siamese Cat" onerror="this.src='images/work-in-progress.svg'">
-                        </div>
-                        <div class="pet-card-content">
-                            <h4>Siamese Cat</h4>
-                            <p class="pet-description">Vocal and affectionate felines</p>
-                            <div class="pet-details">
-                                <span class="pet-attribute">Size: Medium</span>
-                                <span class="pet-attribute">Energy: Medium</span>
-                            </div>
-                            <a href="#" class="pet-adopt-btn">Learn More</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Pet Card 6 -->
-                    <div class="pet-card">
-                        <div class="pet-card-image">
-                            <img src="/images/pets/beagle.jpg" alt="Beagle" onerror="this.src='images/work-in-progress.svg'">
-                        </div>
-                        <div class="pet-card-content">
-                            <h4>Beagle</h4>
-                            <p class="pet-description">Curious and merry little hounds</p>
-                            <div class="pet-details">
-                                <span class="pet-attribute">Size: Medium</span>
-                                <span class="pet-attribute">Energy: High</span>
-                            </div>
-                            <a href="#" class="pet-adopt-btn">Learn More</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Pet Card 7 -->
-                    <div class="pet-card">
-                        <div class="pet-card-image">
-                            <img src="/images/pets/maine-coon.jpg" alt="Maine Coon" onerror="this.src='images/work-in-progress.svg'">
-                        </div>
-                        <div class="pet-card-content">
-                            <h4>Maine Coon</h4>
-                            <p class="pet-description">Gentle giants with playful personalities</p>
-                            <div class="pet-details">
-                                <span class="pet-attribute">Size: Large</span>
-                                <span class="pet-attribute">Energy: Medium</span>
-                            </div>
-                            <a href="#" class="pet-adopt-btn">Learn More</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Pet Card 8 -->
-                    <div class="pet-card">
-                        <div class="pet-card-image">
-                            <img src="/images/pets/pomeranian.jpg" alt="Pomeranian" onerror="this.src='images/work-in-progress.svg'">
-                        </div>
-                        <div class="pet-card-content">
-                            <h4>Pomeranian</h4>
-                            <p class="pet-description">Lively and bold little companions</p>
-                            <div class="pet-details">
-                                <span class="pet-attribute">Size: Small</span>
-                                <span class="pet-attribute">Energy: High</span>
-                            </div>
-                            <a href="#" class="pet-adopt-btn">Learn More</a>
-                        </div>
-                    </div>
+                <div class="pet-cards-container" id="featured-pets">
+                    <!-- Pet cards will be dynamically loaded from petData.js -->
                 </div>
             </div>
         </section>
