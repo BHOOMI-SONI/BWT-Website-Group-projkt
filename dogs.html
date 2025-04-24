@@ -6,6 +6,104 @@
         <title>Dogs | Snugbuddies Pet Adoption</title>
         <link rel="stylesheet" href="styles.css" />
         <script type="module" src="script.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap');
+
+            .dog-hero {
+                text-align: center;
+                padding: 80px 20px;
+                background: linear-gradient(135deg, #ffe8b3, #ffe0a8);
+                color: #333;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .dog-hero h2 {
+                font-size: 2.8rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+                position: relative;
+                display: inline-block;
+                animation: fadeIn 1.5s ease-out forwards;
+            }
+
+            .dog-hero p {
+                font-size: 1.2rem;
+                color: #444;
+                margin-top: 0.2rem;
+                animation: fadeIn 2s ease-out forwards;
+            }
+            
+            .paws {
+                font-size: 1.8rem;
+                margin-left: 0.4rem;
+                animation: bounce 1.5s infinite;
+                display: inline-block;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            @keyframes bounce {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-6px); }
+            }
+
+            .dog-section {
+                padding: 40px 20px;
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            .dog-section h2 {
+                text-align: center;
+                font-size: 2.5rem;
+                color: #333;
+                margin-bottom: 30px;
+            }
+
+            .dog-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            .dog-card {
+                background-color: #fff;
+                border-radius: 16px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: transform 0.2s;
+            }
+
+            .dog-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .dog-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            .dog-card .info {
+                padding: 20px;
+            }
+
+            .dog-card h3 {
+                margin: 0 0 0.5rem;
+                font-size: 1.25rem;
+                color: #d67b5b;
+            }
+
+            .dog-card p {
+                margin-top: 10px;
+                color: #666;
+                font-size: 0.95rem;
+            }
+        </style>
     </head>
     <body>
         <!-- Navigation Bar (appears on scroll) -->
@@ -45,15 +143,109 @@
             </ul>
         </nav>
 
-        <!-- Main Content Section -->
-        <section class="page-content">
-            <div class="container">
-                <h1>Dogs Available for Adoption</h1>
-                <p>Browse our selection of dogs looking for their forever homes.</p>
+        <!-- Hero Section -->
+        <section class="dog-hero">
+            <h2>Meet Our Lovely Dogs <span class="paws">🐾🐾</span></h2>
+            <p>Looking for a furry friend? Adopt one today!</p>
+        </section>
+
+        <!-- Dog Catalogue Section -->
+        <section class="dog-section" id="dog-catalogue">
+            <div class="dog-grid">
+                <div class="dog-card">
+                    <img src="https://placedog.net/500?id=1" alt="Dog named Bella">
+                    <div class="info">
+                        <h3>Bella</h3>
+                        <p>A sweet and playful Labrador who loves belly rubs and long walks.</p>
+                    </div>
+                </div>
+
+                <div class="dog-card">
+                    <img src="https://placedog.net/400/300?id=20" alt="Dog named Max">
+                    <div class="info">
+                        <h3>Max</h3>
+                        <p>A gentle Golden Retriever who is great with kids and other pets.</p>
+                    </div>
+                </div>
+
+                <div class="dog-card">
+                    <img src="https://placedog.net/500?id=3" alt="Dog named Luna">
+                    <div class="info">
+                        <h3>Luna</h3>
+                        <p>A spunky Beagle with a curious nose and lots of love to give.</p>
+                    </div>
+                </div>
                 
-                <div class="content-placeholder">
-                    <h2>Dog Adoption Page</h2>
-                    <p>This page will feature all available dogs for adoption.</p>
+                <div class="dog-card">
+                    <img src="https://placedog.net/400/300?id=40" alt="Dog named Lily">
+                    <div class="info">
+                        <h3>Lily</h3>
+                        <p>A sweet and playful Labrador who loves belly rubs and long walks.</p>
+                    </div>
+                </div>
+
+                <div class="dog-card">
+                    <img src="https://placedog.net/400/300?id=60" alt="Dog named Aslan">
+                    <div class="info">
+                        <h3>Aslan</h3>
+                        <p>A sweet and playful Labrador who loves belly rubs and long walks.</p>
+                    </div>
+                </div>
+
+                <div class="dog-card">
+                    <img src="https://placedog.net/400/300?id=50" alt="Dog named Tyson">
+                    <div class="info">
+                        <h3>Tyson</h3>
+                        <p>A gentle Golden Retriever who is great with kids and other pets.</p>
+                    </div>
+                </div>
+
+                <div class="dog-card">
+                    <img src="https://placedog.net/400/300?id=30" alt="Dog named Joy">
+                    <div class="info">
+                        <h3>Joy</h3>
+                        <p>A gentle Golden Retriever who is great with kids and other pets.</p>
+                    </div>
+                </div>
+
+                <div class="dog-card">
+                    <img src="https://placedog.net/400/300?id=10" alt="Dog named Milky">
+                    <div class="info">
+                        <h3>Milky</h3>
+                        <p>A gentle Golden Retriever who is great with kids and other pets.</p>
+                    </div>
+                </div>
+
+                <div class="dog-card">
+                    <img src="https://placedog.net/400/300?id=30" alt="Dog named Cookie">
+                    <div class="info">
+                        <h3>Cookie</h3>
+                        <p>A gentle Golden Retriever who is great with kids and other pets.</p>
+                    </div>
+                </div>
+
+                <div class="dog-card">
+                    <img src="https://placedog.net/400/300?id=30" alt="Dog named Buddy">
+                    <div class="info">
+                        <h3>Buddy</h3>
+                        <p>A gentle Golden Retriever who is great with kids and other pets.</p>
+                    </div>
+                </div>
+
+                <div class="dog-card">
+                    <img src="https://placedog.net/400/300?id=30" alt="Dog named Rocky">
+                    <div class="info">
+                        <h3>Rocky</h3>
+                        <p>A gentle Golden Retriever who is great with kids and other pets.</p>
+                    </div>
+                </div>
+
+                <div class="dog-card">
+                    <img src="https://placedog.net/400/300?id=30" alt="Dog named Charlie">
+                    <div class="info">
+                        <h3>Charlie</h3>
+                        <p>A gentle Golden Retriever who is great with kids and other pets.</p>
+                    </div>
                 </div>
             </div>
         </section>
