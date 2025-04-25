@@ -77,8 +77,7 @@ function renderPetGrid(pets, container, petType) {
         const infoDiv = document.createElement('div');
         infoDiv.className = petType === 'dogs' ? 'info' : 'cat-info';
 
-        const name = document.createElement('h3');
-        if (petType === 'cats') name.tagName = 'h2'; // Cats use h2 instead of h3
+        const name = document.createElement(petType === 'cats' ? 'h2' : 'h3');
         name.textContent = pet.name;
 
         const age = document.createElement('p');
@@ -186,7 +185,7 @@ export function initPetData() {
     // Determine which page we're on and load appropriate data
     const currentPage = window.location.pathname.split('/').pop();
     console.log('Current page:', currentPage);
-    console.log('Pet data available:', petData);
+    console.log('Pet data available:', petsBySpecies);
     
     if (currentPage === 'dogs.html' || currentPage.toLowerCase() === 'dogs.html') {
         console.log('Loading dogs data');
@@ -200,5 +199,5 @@ export function initPetData() {
     }
 }
 
-// Auto-initialize when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', initPetData);
+// Note: initPetData is now called directly from each page's script tag
+// No need for automatic initialization here

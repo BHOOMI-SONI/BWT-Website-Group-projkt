@@ -858,11 +858,6 @@ export const petsBySpecies = {
   ]
 };
 
-
-// No legacy data structure - fully migrated to petsBySpecies
-
-// Utility functions
-// Get all pets back into one list from the primary source
 export function getAllPets() {
 let allPetsList = [];
 for (const speciesKey in petsBySpecies) {
