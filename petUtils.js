@@ -3,7 +3,7 @@
  * This file contains utility functions for loading and displaying pet data
  */
 
-import { petData, petsBySpecies } from './Data/petData.js';
+import { petsBySpecies, getAllPets, getPetsBySpecies } from './Data/petData.js';
 
 /**
  * Loads pets of a specific type and renders them to a container
@@ -21,33 +21,22 @@ export function loadPets(petType, containerId) {
 
     // Clear existing content
     container.innerHTML = '';
-
-    console.log('Pet data structure:', petData);
     
-    // Get the appropriate pet data
+    // Get the appropriate pet data from petsBySpecies structure
     let pets;
     
-    // Try to get data from the legacy petData structure first
-    if (petData && petData[petType] && Array.isArray(petData[petType])) {
-        console.log(`Using legacy petData structure for ${petType}`);
-        pets = petData[petType];
-    } 
-    // If not available in legacy structure, try the new petsBySpecies structure
-    else if (petsBySpecies) {
-        console.log('Trying petsBySpecies structure');
-        if (petType === 'dogs' && petsBySpecies.Dog) {
-            console.log('Using petsBySpecies.Dog');
-            pets = petsBySpecies.Dog;
-        } else if (petType === 'cats' && petsBySpecies.Cat) {
-            console.log('Using petsBySpecies.Cat');
-            pets = petsBySpecies.Cat;
-        } else if (petType === 'featured') {
-            // For featured pets, create a mix from both structures
-            console.log('Creating featured pets mix from petsBySpecies');
-            const dogPets = petsBySpecies.Dog || [];
-            const catPets = petsBySpecies.Cat || [];
-            pets = [...dogPets.slice(0, 3), ...catPets.slice(0, 3)];
-        }
+    if (petType === 'dogs' && petsBySpecies.Dog) {
+        console.log('Using petsBySpecies.Dog');
+        pets = petsBySpecies.Dog;
+    } else if (petType === 'cats' && petsBySpecies.Cat) {
+        console.log('Using petsBySpecies.Cat');
+        pets = petsBySpecies.Cat;
+    } else if (petType === 'featured') {
+        // For featured pets, create a mix from available species
+        console.log('Creating featured pets mix from petsBySpecies');
+        const dogPets = petsBySpecies.Dog || [];
+        const catPets = petsBySpecies.Cat || [];
+        pets = [...dogPets.slice(0, 3), ...catPets.slice(0, 3)];
     }
     
     if (!pets || !Array.isArray(pets)) {
@@ -79,7 +68,7 @@ function renderPetGrid(pets, container, petType) {
         petCard.className = petType === 'dogs' ? 'dog-card' : 'cat-card';
 
         const img = document.createElement('img');
-        img.src = pet.image;
+        img.src = pet.imageUrl || 'images/work-in-progress.svg';
         img.alt = `${pet.name} - ${pet.breed || ''}`;
         img.onerror = function() {
             this.src = 'images/work-in-progress.svg';
@@ -113,8 +102,7 @@ function renderPetGrid(pets, container, petType) {
         petCard.appendChild(infoDiv);
 
         container.appendChild(petCard);
-    });
-}
+    });}
 
 /**
  * Renders featured pets (for index.html)
@@ -130,10 +118,10 @@ function renderFeaturedPets(pets, container) {
         imageDiv.className = 'pet-card-image';
 
         const img = document.createElement('img');
-        img.src = pet.image;
+        img.src = pet.imageUrl || 'images/work-in-progress.svg';
         img.alt = pet.name;
         img.onerror = function() {
-            this.src = pet.fallbackImage || 'images/work-in-progress.svg';
+            this.src = 'images/work-in-progress.svg';
         };
 
         const contentDiv = document.createElement('div');
@@ -157,10 +145,10 @@ function renderFeaturedPets(pets, container) {
             detailsDiv.appendChild(sizeSpan);
         }
 
-        if (pet.energy) {
+        if (pet.energyLevel) {
             const energySpan = document.createElement('span');
             energySpan.className = 'pet-attribute';
-            energySpan.textContent = `Energy: ${pet.energy}`;
+            energySpan.textContent = `Energy: ${pet.energyLevel}`;
             detailsDiv.appendChild(energySpan);
         }
 
@@ -172,8 +160,8 @@ function renderFeaturedPets(pets, container) {
         }
 
         const learnMoreLink = document.createElement('a');
-        learnMoreLink.href = pet.type === 'dog' ? 'dogs.html' : 
-                            pet.type === 'cat' ? 'cats.html' : '#';
+        learnMoreLink.href = pet.species === 'Dog' ? 'dogs.html' : 
+                            pet.species === 'Cat' ? 'cats.html' : '#';
         learnMoreLink.className = 'pet-adopt-btn';
         learnMoreLink.textContent = 'Learn More';
 
