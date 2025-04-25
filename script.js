@@ -142,16 +142,33 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             e.stopPropagation();
             
+            // Check if we're on mobile
+            const isMobile = window.innerWidth <= 768;
+            
+            // Toggle active class for this dropdown
             const isActive = dropdown.classList.contains('active');
             
-            // Close all dropdowns first
-            closeAllDropdowns();
+            // On mobile, we want to allow multiple dropdowns to be open
+            // On desktop, we close all other dropdowns
+            if (!isMobile) {
+                closeAllDropdowns();
+            }
             
-            // If the clicked dropdown wasn't active, open it
-            if (!isActive) {
+            // Toggle the clicked dropdown
+            if (isActive) {
+                dropdown.classList.remove('active');
+            } else {
                 dropdown.classList.add('active');
             }
         });
+    });
+    
+    // Update dropdown behavior on window resize
+    window.addEventListener('resize', function() {
+        // If we're switching to desktop view, close all dropdowns
+        if (window.innerWidth > 768) {
+            closeAllDropdowns();
+        }
     });
     
     // Close dropdowns when clicking outside
