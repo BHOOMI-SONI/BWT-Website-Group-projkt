@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Grooming Guide</title>
+  <style>
+    body {
+      background-color: rgb(248, 224, 195);
+      text-align: center;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+      color: #333;
+    }
+
+    header {
+      background-image: url("https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6qwBdphsunxX1DfYa6StVcgOiv7s8JW9KlmdM");
+      height: 390px;
+      width: auto;
+      color: white;
+      padding: 2rem;
+      text-align: left;
+      
+    }
+
+    header h1 {
+      margin-top: 40px;
+     
+      font-size: 2.8rem;
+    }
+
+    header h3 {
+      font-size: 1.5rem;
+      margin-top:20px;
+      padding: 40px;
+    }
+
+    .container{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background-color: rgb(250, 202, 148);
+      gap:5px;
+      margin:30px;
+      padding:10px;
+
+    }
+    .container > div{
+      background-color: rgb(248, 217, 177);
+      padding:5px;
+
+    }
+
+    importance h2{
+      display: inline;
+      color: rgb(71, 30, 3);
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 30px;
+      background-color: rgba(209, 175, 120, 0.605)
+  
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h2 {
+      color: #4e89ae;
+      border-bottom: 2px solid #4e89ae;
+      padding-bottom: 0.5rem;
+    }
+
+    .At-Home{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr ;
+      padding:10px;
+      margin: 90px 60px;
+      background-color:  rgb(248, 224, 195);
+      gap:20px;
+
+    }
+    .At-Home > div{
+      background-image: radial-gradient(white, rgb(251, 243, 236), rgb(248, 224, 195));
+      height: 20rem ;
+      text-align: center;
+    } 
+
+    .row{
+      display:flex;
+      flex-flow: row wrap;
+      background-image:linear-gradient( rgba(249, 145, 9, 0.36),white);
+      margin:0px;
+
+    }
+    .photos{
+      flex: 40%;
+    }
+    .info{
+      flex: 60%;
+    }
+
+    
+    .tip-box, .store-box {
+      background-color: #ffffff;
+      padding: 1rem 1.5rem;
+      border-left: 5px solid  rgba(236, 125, 40, 0.834);
+      box-shadow: 0 2px 6px rgb(250, 202, 148);
+      margin: 0.2rem 5rem;
+      border-radius: 8px;
+      text-align:left;
+    }
+
+    .store-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+    .meta-grooming{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr ;
+      padding:10px;
+    }
+    .grooming-service{
+     
+      background: #f5f5f7;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      width:300px;
+      width:600px;
+    }
+   
+    .support-box {
+      position: relative;
+     
+      padding: 20px 40px;
+      background: #fff;
+      border: 1px solid #d1d1d6;
+      border-radius: 12px;
+      font-weight: 600;
+      color: #1d1d1f;
+      font-size: 1.2em;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: box-shadow 0.2s;
+    }
+    .support-box:hover {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+    .info-box {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 110%;
+      transform: translateX(-50%);
+      min-width: 250px;
+      background: #fff;
+      color: #111;
+      border: 1px solid #d1d1d6;
+      border-radius: 10px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+      padding: 18px 22px;
+      z-index: 10;
+      font-size: 1em;
+      line-height: 1.5;
+      transition: opacity 0.3s;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .support-box:hover .info-box {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (max-width: 768px) {
+      .store-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Fluff It Up! Grooming Magic for Your Pet</h1>
+
+    <h3>“We’re Here to Make Your Pet Look Pawsitively Adorable<br>—Fluffy, Fresh, and Full of Joy!”</h3>
+  </header>
+  <br>
+  <importance>
+  <h2>Ever wondered how grooming can do more than just freshen up your pet?</h2>
+  <div class="container">
+    <div><h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6oAQtQU5E47SntcFgiw1hKzx6mWR5jA8MkOId" style= "width:60px; border-radius: 50%;"> Health and Hygiene</h3><p>Regular grooming helps prevent skin infections, mats, and tangles that can cause discomfort and lead to health issues.</p></div>
+    <div><h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6fyFmlA7ktP4LoSQgNHaZnidXq8EYWyIhOcK0" style= "width:50px; border-radius: 50%;">Prevents Parasites</h3><p>Grooming helps you spot fleas, ticks, and other parasites early on.</p></div>
+      <div><h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6wb92vHENdtE3zXrR9hL5S7fqIe8UT6QlYmoV" style= "width:50px; border-radius: 50%;">Helps with Early Detection of Health Issues</h3><p>Early detection of problems like allergies, infections, or tumors can lead to faster treatment.</p></div>
+      <div><h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6tDD0qjP8XwsEZDrG7YWhKC1mjUa5qxcu0Qdp" style= "width:40px; border-radius: 50%;">Promotes Bonding</h3><p>Grooming is a great opportunity to bond with your pet</p></div>
+      <div><h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme67EHeZuRKjWuUs5B3lbMCad6PDS1f80nNxm2k" style="width:40px; border-radius: 50%;">Improves Mental Well-Being</h3><p>Pets often feel more at ease after a grooming session, especially if it’s done regularly. It can help them feel pampered, reducing stress and anxiety.</p></div>
+      <div><h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6cn8VJVSbUfiVTPshM69l5weOjmcCakoRtSp3" style="width:40px; border-radius: 50%;">Comfort</h3><p>Removing excess fur or mats ensures that pets feel more comfortable. Especially for long-haired breeds, grooming prevents painful tangles that can restrict movement or cause skin irritation.</p></div>
+    </div>
+  </importance>
+  
+  
+<div class="row">
+  <div class="photo">
+      <img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6yCkJFSYZGXRutMW8y6qFUvOT7HCgIs5S2w0a" style="width:35rem">
+  </div>
+  <div class="info">
+      <h2 style="font-size: 40px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Pro Tips for Pampering</h2>      
+      <div class="store-list">
+        <div class="store-box">
+          <strong> Brushing and Coat Care</strong><br>
+          <p> Brush your pet’s coat according to their breed and hair type.<br>
+            Long-haired pets may need daily brushing, while short-haired pets can be brushed weekly.<br>
+            Gently detangle any knots to prevent discomfort and skin issues.</p>
+        </div>
+        <div class="store-box">
+          <strong>Bathing Basics</strong><br>
+          <p>Always use shampoos formulated for pets to avoid skin irritation.<br>
+            Most dogs need a bath every 4-6 weeks; cats usually groom themselves but may need occasional baths if they get dirty.<br>
+            Towel dry and, if needed, use a pet-safe hair dryer on a low setting.</p>
+        </div>
+        <div class="store-box">
+          <strong> Create a Positive Experience</strong><br>
+          <p>Let your pet get used to grooming tools and routines gradually.<br>
+            Reward your pet for calm behavior to make grooming a positive experience.<br>
+            Some adopted pets may be nervous; gentle handling and patience are key.</p>
+        </div>
+      </div>
+  </div>
+</div>
+   
+  <div class="At-Home">
+    <div><h2> Regular Brushing</h2><p>Brush at least 2-3 times a week, or daily for long-haired breeds, using gentle, circular motions and paying attention to areas prone to tangles like behind the ears and under the belly.Choose a brush or comb that matches your pet’s fur texture—slicker brushes for long-haired pets, rubber brushes for short-haired breeds, and deshedding tools for double-coated animals</p></div>
+    <div><h1>At-Home Grooming:<br> How to Pamper Your Pet Like a Pro</h1><p></p></div>
+    <div><h2> Nail Trimming</h2><p> Regular nail trimming prevents discomfort, injuries, and skeletal issues. Use pet nail clippers and trim only the tip to avoid cutting the quick (the sensitive part of the nail). If unsure, trim small amounts at a time.Check your pet’s nails every few weeks and trim as needed.</p></div>
+    <div ><h2> Ear Cleaning</h2><p>Clean your pet’s ears with a vet-recommended ear cleaning solution and a cotton ball or gauze. Gently wipe the outer ear—never insert anything deep into the ear canal. Regular ear cleaning helps prevent infections, especially in breeds with floppy ears.</p><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6syy9CrGkizU6CQpImwbV1SfDBXYWcMLynso4" style="height:120px; width:90%; border:1px solid grey"></div>
+    <div><h2> Dental Care</h2><p>Brush your pet’s teeth regularly with a pet-specific toothbrush and toothpaste to prevent dental diseases and bad breath. Dental chews can also help maintain oral hygiene.</p><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6mONVxkHrBuO5SAldbsvG01qTWYp6cz7UCikw" style="height:140px; width:90%; border:1px solid grey"></div>
+    <div><h2>Coat and Hair Trimming</h2><p>For pets with long or fast-growing hair, occasional trimming is necessary to avoid matting and overheating. Use blunt-ended scissors or pet clippers, and trim cautiously around sensitive areas like the eyes and paws.</p><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6gyz6STevujSx0QFmXB4DAbJ87nRqNctrVe2I" style="height:140px; width:90%; border:1px solid grey"></div>
+</div>
+
+
+<div class="meta-grooming">
+ <div class="grooming-service">
+<div class="support-box">
+  Pet Wagon Pune
+  <p>Pet groomer <br>3+ years in business. Pune, Maharashtra <br>
+      Open 24 hours  094220 22036</p>
+  <div class="info-box">
+    <strong>Pet Wagon </strong><br>
+    <b>Address</b>: Narveer Tanaji Wadi, Shivajinagar, Pune, Maharashtra 411008<br>
+<b>Areas served</b>: Pune and nearby areas<br>
+<b>Hours:</b> 
+Open 24 hours<br>
+Phone: 094220 22036
+<br>
+    <a href="https://petwagon.in/" style="color:#0071e3;text-decoration:none;">Visit Pet Wagon Website  &rarr;</a>
+  </div>
+</div>
+</div>
+<div class="support-box">
+  Comb & Collar Pet Grooming
+  <p>Training, Pet supplies and 24/7 cage free Boarding<br>Pet groomer, Pune, Maharashtra  <br>Closes 9:30 pm  093222 72106</p>
+  <div class="info-box">
+    <strong> Comb & Collar Pet Grooming</strong><br><b>Address:</b> Showroom no 9, ABIL Imperial, Near, Rohan Seher Ln, Baner, Pune, Maharashtra 411045<br>
+    <b>Areas served:</b> Pune<br>
+<b>Hours:</b> Opens 9 am Fri<br>
+<b>Phone:</b> 093222 72106<br>
+<br>
+    <a href="https://m.dingg.in/book?id=5721832159&source=5" style="color:#0071e3;text-decoration:none;">Visit Comb & Collar Pet Grooming &rarr;</a>
+  </div>
+</div>
+<div class="support-box">
+  Dog Mitra
+  <p> Pet groomer  in Pune, Maharashtra<br><br></p>3+ years in business <br>Opens 10 am Fri · 092721 29797
+  <div class="info-box">
+    <strong>Dog Mitra | Pet Grooming Salon </strong>
+    <b>Address:</b>Shop No 4 & 5, Golden Arch Society, Prabhat Housing Society, Vidnyan Nagar, Bavdhan, Pune, Maharashtra 411021<br>
+<b>Areas served: </b>Pune<br>
+<b>Hours:</b> Opens 9am <b>Phone: </b> 073035 14453
+<br>
+<br>
+    <a href="https://dogmitra.com/" style="color:#0071e3;text-decoration:none;">Visit Dog Mitra website &rarr;</a>
+  </div>
+</div>
+<div class="support-box">
+  PAW FUTURE PET SERVICES (PET GROOMER)
+  <p>5+ years in business · Pune, Maharashtra<br> Opens 8:30 am Fri · 089750 03750<br></p>
+  <div class="info-box">
+    <strong>PAW FUTURE PET SERVICES  </strong><br>
+    <b>Address: </b> Lower Bibwewadi, Mahesh Society, Bibwewadi, Pune, Maharashtra 411037<br>
+<b>Hours:</b>Opens 8am<br>
+<b>Areas served: </b>  Pune and nearby areas
+<br><b>Phone: </b> 089750 03750
+<br>
+    <a href="https://paw-future-pet.localo.site/" style="color:#0071e3;text-decoration:none;">Visit the website &rarr;</a>
+  </div>
+</div>
+<div class="support-box">
+  Beauty in the Beast Dog Salon and Academy
+  <p>Pet groomer in Pune, Maharashtra<br> Opens 10 am <br>7+ years in business </p>
+  <div class="info-box">
+    <strong> Beauty in the Beast Dog Salon and Academy</strong><br>
+    <b>Address:</b>Shop no. 2, Rahul CHS, Madhuban Society, Samarth Rd, opposite SBI, Madhusanchay Society, Tejonidhi Housing Society, Ganesh Nagar, Karvenagar, Pune, Maharashtra 411052 <br>
+<b>Areas served: </b>Pune<br>
+<b>Hours: </b> ⋅Opens 10 am 
+<br><b>Phone:</b> 092721 29797<br>
+<b>Products and services: </b> beautyinthebeast.dog<br>
+    <a href="https://www.beautyinthebeast.dog/" style="color:#0071e3;text-decoration:none;">Visit the website &rarr;</a>
+  </div>
+</div>
+<div class="support-box">
+  Bubbly Paws Professional Pet Grooming Salon
+  <p>Pet groomer in Pimpri-Chinchwad, Maharashtra<br> Opens 9 am Fri · 093093 77630</p>
+  <div class="info-box">
+    <strong>Bubbly Paws Professional Pet Grooming Salon </strong><br>
+    <b>Address:</b> B7, Kuber Imperia, Datta Mandir Rd, Shankar Kalat Nagar, Wakad, Pune, Pimpri-Chinchwad, Maharashtra 411057
+    <br>
+<b>Areas served:</b>Pune and nearby areas<br>
+<b>Phone: </b>  093093 77630
+<br>
+<br>
+    <a href="https://www.instagram.com/bubblypaws_pune/" style="color:#0071e3;text-decoration:none;">Visit their instagram &rarr;</a>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <h3>4.9 ⭐</h3>
+  <p></p><br><br><br><br><br><br>
+  <p>72K+ Ratings</p>
+</div>
+
+</div>
+
+</body>
+</html>
