@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SnugBuddies- Pet Products Store</title>
+  <style>
+    html{scroll-behavior: smooth;}
+    body {
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      background:scroll;
+      color: #333;
+    }
+    header {
+  
+      background: #f8abd8;
+      font-size:40px;
+      color: #fff;
+      padding: 2rem 1rem;
+    }
+    nav {
+      position:fixed;
+      top: 0;
+      right: 0;
+      left:0;
+      background: rgb(128, 42, 42);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    nav a {
+      color: #e7bf68;
+      font-size: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      max-width:100%;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: linear-gradient(pink,white);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    h2 {
+      color: #7e2e1a;
+      font-style: normal;
+      font-weight: bold;
+      font-size: xx-large;
+      font-stretch: expanded;
+      text-align: center;
+    }
+    h3{
+      font-family: Arial, Helvetica, sans-serif;
+      font-style: inherit;
+      font-size: 40px;
+      
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      size: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .product-card {
+      background: #f1f3ac;
+      border-radius: 8px;
+      height: 100%;
+      padding: 1rem;
+      padding-top: 5%;
+      text-align: center;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+      transition: transform 0.15s;
+    }
+    .product-card:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 4px 12px rgba(95,158,160,0.12);
+    }
+    .product-card img {
+      width: 70%;
+      height: 50%;
+      object-fit: contain;
+      margin-bottom: 1rem;
+      border-color: #854215;
+      
+    }
+    .cta {
+      
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.4rem;
+      background: #5f9ea0;
+      color: #fff;
+      border-radius: 24px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .cta:hover {
+      background: #407e87;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #91d1ee;
+      color: #052627;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      section {
+        margin: 1rem;
+      }
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+  .image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: 500rem;
+  height: auto;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 55%;           /* Vertically center */
+  left: 25%;
+  right:30%;          /* Horizontally center */
+  transform: translate(-50%, -50%);
+  color: #460d0d;
+  background: rgba(0, 0, 0, 0); /* Optional: for readability */
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 78px;
+  text-align: center;
+}
+.p1{
+  font-size: larger;
+  text-align: center;
+  align-content: baseline;
+  font-style: normal;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:#033d3f;
+}
+
+</style>  
+</head>
+<body>
+  <header>
+  <div class="image-container">
+    <img src="https://kookykibble.co.nz/cdn/shop/files/Kooky_Kibble_NZ_Pet_Food_New_Banner-rev.jpg?v=1727699311&width=3840" alt="Descriptive Text">
+    <div class="overlay-text">Everything your pet needs, all in one place!</div>
+  </div>
+  
+  
+  </header>
+  <nav>
+    <a href="#categories">Categories</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="categories">
+    
+    <h2>Shop by Category</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6QCjvYYJGmXk9FdJgyRoEei37Ncq14Wtl8Lxn" alt="Dog Food"  >
+        <h3>Dog Food</h3>
+        <p >Nutritious meals for every breed and age.</p>
+        <a href="https://sayhenlo.com/" class="cta" target="_blank">Browse Dog Food</a>
+      </div>
+      <div class="product-card">
+        <img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6sUVKB3GkizU6CQpImwbV1SfDBXYWcMLynso4" alt="Cat Food">
+        <h3>Cat Food</h3>
+        <p>Healthy options for happy, energetic cats.</p>
+        <a href="https://www.whiskas.in/our-products/wet-cat-food" class="cta" target="_blank">Browse Cat Food</a>
+      </div>
+      <div class="product-card">
+        <img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme60A1Xqbl4FpqxGYHdAj9WCnmtTlK68OPof1Rs" alt="Grooming" >
+        <h3>Grooming and Medications</h3>
+        <a href="https://www.abkgrooming.com/?srsltid=AfmBOoo0z5tQBAzZXN5Lc4luSixAdZCntf5-_eJcO38V5En2duyY-1CR" class="cta" target="_blank">Shop Grooming</a>
+      </div>
+      <div class="product-card">
+        <img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6c88DbygSbUfiVTPshM69l5weOjmcCakoRtSp" alt="Accessories">
+        <h3>Accessories</h3>
+        <p>Collars,leashes & travel essentials.</p>
+        <a href="https://www.petindiaonline.com/product-details.php?ref=1784860023&srsltid=AfmBOoo3hm7HpVxXJp080YkCLClGAUFTvoNLA50e0rSSewAmd9Y4cais" class="cta" target="_blank">See Accessories</a>
+      </div>
+      <div class="product-card">
+        <img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme62mWeReU1hly7HbPqQmOS83AdpFMVnCNikZXD" alt="Toys">
+        <h3>Toys</h3>
+        <p>Fun and engaging toys for active pets.</p>
+        <a href="https://headsupfortails.com/collections/dog-toys?srsltid=AfmBOoqx-2b-WTTzVGScIbv91-4O2tpgd2CPPMkh0Ymh9myPWqow1w0S" class="cta" target="_blank">Browse Toys</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="h2">About Snug-Buddies Store</h2>
+    <p class="p1" >
+      The Snug-Buddies Store is dedicated to providing the best products for your furry friends. 
+      From premium food to grooming essentials, fun toys, and handy accessories, we help you care for your beloved pets with ease and confidence!
+    </p>
+    </section>
+
+  <section id="contact">
+    
+    <h2 class="h2">Contact Us</h2>
+    <p class="p1">
+      Email: support@snugbuddies.com<br>
+      Phone: +91 9172552251
+    </p>
+  </section>
+  
+
+  <footer>
+    &copy; 2025 SnugBuddies. All rights reserved.
+  </footer>
+</body>
+</html>
