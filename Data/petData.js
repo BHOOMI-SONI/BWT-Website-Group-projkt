@@ -870,5 +870,3 @@ return allPetsList;
 export function getPetsBySpecies(speciesName) {
   return petsBySpecies[speciesName] || [];
 }
-
-// No legacy mapping function needed - fully migrated to petsBySpecies

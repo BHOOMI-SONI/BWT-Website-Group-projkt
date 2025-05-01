@@ -4,6 +4,7 @@
  */
 
 import { petsBySpecies, getAllPets, getPetsBySpecies } from './Data/petData.js';
+import { openPetModal } from './modal.js';
 
 /**
  * Loads pets of a specific type and renders them to a container
@@ -100,6 +101,12 @@ function renderPetGrid(pets, container, petType) {
         petCard.appendChild(img);
         petCard.appendChild(infoDiv);
 
+        // Add click event listener to open modal with pet details
+        petCard.addEventListener('click', () => {
+            openPetModal(pet);
+        });
+        petCard.style.cursor = 'pointer'; // Change cursor to indicate clickable
+
         container.appendChild(petCard);
     });}
 
@@ -159,10 +166,16 @@ function renderFeaturedPets(pets, container) {
         }
 
         const learnMoreLink = document.createElement('a');
-        learnMoreLink.href = pet.species === 'Dog' ? 'dogs.html' : 
-                            pet.species === 'Cat' ? 'cats.html' : '#';
+        learnMoreLink.href = '#';
         learnMoreLink.className = 'pet-adopt-btn';
         learnMoreLink.textContent = 'Learn More';
+        
+        // Prevent the link click from triggering the card click and open modal instead
+        learnMoreLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openPetModal(pet);
+        });
 
         // Assemble the card
         imageDiv.appendChild(img);
@@ -173,6 +186,12 @@ function renderFeaturedPets(pets, container) {
 
         petCard.appendChild(imageDiv);
         petCard.appendChild(contentDiv);
+        
+        // Add click event listener to open modal with pet details
+        petCard.addEventListener('click', () => {
+            openPetModal(pet);
+        });
+        petCard.style.cursor = 'pointer'; // Change cursor to indicate clickable
 
         container.appendChild(petCard);
     });
@@ -197,6 +216,15 @@ export function initPetData() {
         console.log('Loading featured pets data');
         loadPets('featured', 'featured-pets');
     }
+    
+    // Initialize modal functionality
+    import('./modal.js').then(module => {
+        if (typeof module.initModal === 'function') {
+            module.initModal();
+        }
+    }).catch(err => {
+        console.error('Error initializing modal:', err);
+    });
 }
 
 // Note: initPetData is now called directly from each page's script tag

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Veterinary Services</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #24445C;     
+      --accent: #5BA16A;        
+      --neutral: #F4F6F8;      
+      --highlight: #D9B08C;    
+      --danger: #C94C4C;      
+      --text: #222;
+      --muted: #666;
+    }
+    *{
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--neutral);
+      color: var(--text);
+    }
+    header {
+      height: 400px;
+      background:rgb(1, 52, 71);
+     
+      color: #fff;
+      padding: 2rem 0 1rem 0;
+      text-align: center;
+      border-bottom: 4px solid var(--accent);
+     
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background:rgb(1, 52, 71);
+      
+      border-bottom: 2px solid rgb(6, 75, 100) ;
+      padding-bottom: 0.3rem;
+      margin-bottom: 3rem;
+    }
+    nav a {
+      color:rgb(247, 236, 215);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    .splita{
+      
+      display:flex;
+      width:1200px;
+      height: 400px;
+      justify-content: center;
+      align-items:center;
+      flex-flow: row wrap;
+     margin-left: 160px;
+    
+     margin-top: 20px;
+     padding:0px;
+    }
+    .split1{
+      background-color: rgb(93, 190, 201);
+      flex: 40%;
+      width:auto;
+      padding : 50px 10px;
+      line-height: 82px ;
+      
+    }
+    .split2{
+      background-color: #4a8f8f;
+      flex:40%;
+      padding:20px;
+     
+    }
+    .space{
+      height:800px;
+      width:auto;
+      padding-top: 210px;
+      padding-left: 0px;
+      padding-right: 0px;
+
+      background-image:linear-gradient(to bottom right ,rgba(53, 226, 194, 0.899) , rgb(253, 253, 253), rgba(230, 146, 161, 0.599)  );
+    }
+    .space > p{
+      text-align: center; 
+      font-family:'Times New Roman', Times, serif;
+     font-style: italic;
+      font-size: 35px;
+    }
+    .vet_importance{
+      display:grid;
+
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      padding:0px;
+      margin:0px 120px;
+      background-color:rgba(162, 189, 86, 0);
+      gap:12px;
+      justify-content:center;
+      align-content:center;
+
+     
+    }
+   
+    .vet_importance > div {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.501),rgba(255, 192, 203, 0.097) , rgba(255, 255, 255, 0.64));
+      height:auto;
+      text-align: center;
+    }
+    .vet_importance > div > img{
+      width:200px; height: auto;  border-radius: 60px 30px 40px 20px;
+      margin-top:20px;
+
+    }
+    .vet_importance >div >p{
+      text-align:start;
+      padding:30px;
+      color:rgb(57, 54, 54);
+      padding-top:5px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .catpic{
+      height:150px;
+      width:auto;
+      background-image: url(https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6UpoR58ZSsBRmZ7k9oi4v0j6PGqJTFDzrUdnh);
+      opacity: 0.9;
+    }
+
+  .vets{
+    height:auto;
+    width:auto;
+    
+    padding-bottom:80px;
+    background-image:linear-gradient(to bottom left, rgba(237, 174, 184, 0.516),rgb(255, 255, 255),rgba(28, 142, 148, 0.629));
+  } 
+
+  .vet-service{
+    display:grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      width:1400px;
+      padding:5px;
+      margin: 90px 60px;
+      gap:50px;
+      background-color: rgba(51, 134, 123, 0);
+    
+  }
+  .vet-service >div{
+    background-color: rgba(51, 134, 123, 0);
+    height:25rem;
+    text-align: center;
+
+  }
+ 
+  
+  .vet-service > div > a{
+    text-decoration: none; 
+   color:#092841ee;
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .vet-service > div > a:hover{
+    color:black;
+    text-decoration: underline;
+
+  }
+  .support-box {
+      position: relative;
+      display: inline-block;
+      padding: 0px 0px;
+      background: #eaa2a24c;
+      border: 1px solid #d1d1d6;
+      border-radius: 12px;
+      font-weight: 600;
+      color: #1d1d1f;
+      font-size: 1.2em;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(33, 65, 81, 0.152);
+      transition: box-shadow 0.2s;
+    }
+    .support-box:hover {
+      box-shadow: 0 4px 24px rgba(16, 116, 119, 0.793);
+    }
+    .info-box {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 70%;
+      transform: translateX(-50%);
+      min-width: 300px;
+      background: #85d5d81b;
+      color: #111;
+      border: 1px solid #d1d1d6;
+      border-radius: 10px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+      padding: 5px 5px;
+      z-index: 10;
+      font-size: 0.7em;
+      line-height: 1.5;
+      transition: opacity 0.3s;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .support-box:hover .info-box {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    
+    
+    h1, h2 {
+      font-weight: 700;
+      margin-top: 0;
+    }
+    h2 {
+      color: rgb(1, 52, 71);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer{
+      background-color: #367979;
+      padding:5px 250px;
+      height:465px;
+      width:auto;
+    }
+  
+    .footer >p{
+      text-align: center; 
+      font-family:'Times New Roman', Times, serif;
+     font-style: italic;
+      font-size: 35px;
+    }
+   
+     
+  
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#why">Why it matters</a>
+      <a href="#services">Services</a>
+      <a href="#tips">First Visit Tips</a>
+    </nav>
+
+   <div class="splita">
+    <div class="split1">
+      
+      <img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6aY3yszgf1hlcRSgUtCn2Tbo0VYderAFI9GMB" style="height:400px; width: auto; ">
+    </div>
+    <div class="split2">
+      <h2 style="font-size: 40px; font-family:'Times New Roman', Times, serif;"><b>Purr-fect Health, One Paw at a Time!</b></h2>
+      <h4 style= "font-style: oblique;">From First Puppy Kisses to Golden Years Purrs, We’re Here to Make Every Step of Your Pet’s Life Healthier, Happier, and a Little Goofier!</h4><br>
+
+     <p >From belly rubs to bandages, veterinary services keep our furry, feathered, and finned friends feeling their best!  <br> Whether it’s time for shots, checkups, or a little extra TLC, vets are here to make sure every tail wags, every whisker twitches, and every pet lives their happiest, healthiest life.</p>
+     <br><br>
+     <h2><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6QQdEQiJGmXk9FdJgyRoEei37Ncq14Wtl8Lxn" style= "width:111px; border-radius: 60px 30px 40px 20px ; float: left;">Caring for Every Heartbeat</h2>
+     
+   
+    </div>
+
+   </div>
+    
+  </header>
+  <section id="why">
+  <div class="space"><br><br>
+    <p style="border-bottom: 1px solid green;">Understanding the Importance of Veterinary Care for Every Stage of Your Pet’s Life !</p>
+    <p style="  color:rgb(78, 74, 74); font-size:20px; margin:0px 80px;"> It’s about more than medicine-it’s about cherishing every wag, purr, and nuzzle. By caring for their health, we honor the unconditional love they give us, creating more precious moments together, today and always.</p><br><br><br>
+    <div class="vet_importance">
+     <!--  <div><img src="prevention beeter thean cure.jpg"><p><b>Prevention is Better Than Cure: </b><br>Regular veterinary checkups, vaccinations, and parasite control help prevent diseases before they start. Preventive care keeps animals safe from illnesses like rabies, distemper, and parvovirus, which can be life-threatening if not addressed early</p></div> -->
+      <div><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6kLIqIRMIyQAEbtXu134NTdZWsC0GLHplzK7x" ><p><b>Early Detection Saves Lives: </b><br>Animals often hide signs of illness or pain, making it hard for owners to notice problems. Routine visits allow veterinarians to spot health issues early-when they’re easier and less expensive to treat. </p></div>
+      <div><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6ZrlVhmeQCxXBNhgPYc12F9pkfGRKzedsaSyL" ><b><p>Improved Quality and Length of Life:</b><br> With regular veterinary care, animals are more likely to live longer, healthier lives. Preventive treatments and timely interventions help manage chronic diseases and support healthy aging, ensuring pets enjoy more happy years with their families</p></div>
+      <div><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme69oswp3c0WHF1nD8gLdckj4bX6IwEBuhlt0TO" ><p><b>Expert Guidance: </b><br>Veterinarians offer advice on nutrition, exercise, behavior, and general well-being tailored to each animal’s needs. This guidance is especially important as pets age or if they have special health requirements</p></div>
+      <div><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6rQpnMjHOG9sL5klCZwTH7tMX6K3enBiEhAd0"><p><b>Peace of Mind for Owners:</b><br> Knowing your animal is healthy and receiving the best care brings reassurance and strengthens the bond between people and their pets</p></div>
+    </div><br><br>
+      <h1 style="color:rgb(213, 113, 130);text-align: center; padding: 15px;">Because we love them </h1>
+  </div><br>
+  <div class="catpic">
+    <br>
+    
+  </div>
+</section>
+
+  <section id="services">
+  <div class="vets">
+     <br>
+     <p style="text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:50px;color: #1f3e57;">Trusted Veterinary Clinics and Hospitals</p>
+     
+
+     <div class="vet-service">
+    
+      <div><h2 style="text-align: center; margin-top: 100px;">Vaccinations and wellness exams</h2><p>Routine health check-ups and essential immunizations for pets. Explore this section to learn more about available options nearby. </p></div>
+      <div class="support-box"><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6KtWUO2DNBoGu5xhEncrI7vQk3SZqCbmYUOiH" style="width:350px; height:auto;"><a href="https://g.co/kgs/zdwQoNJ"><h1>Dr. Joshi's Vet Clinic</h1></a> <div class="info-box"><b>Hours: </b> Opens 11 am <br><a href="https://www.google.com/#"><b>Phone:</b>   077700 89120</a>  <br>  <b>Address:</b> Arunodaya, 769/7, lane, no 7, Bhandarkar Rd, opp. balbhim mandir, Deccan Gymkhana, Pune, Maharashtra.411004</p></div></div>
+      <div class="support-box"><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6DYfuG9BoGIW3tBfEQs627HvwX5U9aTeiqFY0" style="width: 300px; height:auto;"><a href="https://g.co/kgs/GyVyBX9"><h1>    Pet Aid Clinic  </h1></a><div class="info-box"> <br><a href="  https://www.google.com/# "><b>Phone:</b>  08219902696</a><br><b>Address:</b> Plot no. 65, Pet-Aid clinic, Kshitij Business centre, 8, DG Dani Rd, opp. ILS Law college, Deccan Gymkhana, Pune 411004 </p></div></div>
+      <div class="support-box"><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6rrXpogHOG9sL5klCZwTH7tMX6K3enBiEhAd0" style="width: 300px; height:auto;"><a href="  https://vetic.in/clinics/pune/aundh?utm_source=organic   "><h1>  Vetic Pet Clinic Aundh   </h1></a><div class="info-box"><b>Hours:</b>  9:30am-8pm <br><a href="  https://www.google.com/# "><b>Phone:</b>  092058 63500 </a><br><b>Address:</b> No. 1 & 2, Surmani Society, DP Rd, near Aundh, opp. DAV, Harmony Society, Ward No. 8, Wireless Colony, Aundh, Pune 411007 </p></div></div>
+    
+  
+      <div class="support-box"><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6mOv7fdhrBuO5SAldbsvG01qTWYp6cz7UCikw" style="width:   260px; height:auto;"><a href="   https://www.facebook.com/sbvetservices/  "><h1>  Dr. S.B.'s Veterinary Clinic and Diagnostics   </h1></a><div class="info-box"><b>Hours:</b>9am-1pm, 4:30-8pm  <br><b>Phone:</b>  070580 35154<br><b>Address:</b> Shop No. 3, Abhay CHS, MIT Road, Rambaug Colony, Kothrud, Pune  411038 </p></div></div>
+      <div class="support-box"><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6jR4bvRxywkxKnSgZoHU83BXcTlLi1AmzNVds" style="width:   300px; height:auto;"><a href="   https://www.facebook.com/p/PetFix-Veterinary-Clinic-100092368062031/  "><h1>    PetFix Veterinary Clinic </h1></a><div class="info-box"><b>Hours:</b> 9:30am-7:30pm  <br><b>Phone:</b>   089998 19887<br><b>Address:</b> 1/A, Ground floor, Pentium Residency, Vidnyan Nagar Rd, Sagar Co-Operative Housing Society, Bavdhan, Pune, Maharashtra 411021 </p></div></div>
+      <div class="support-box"><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6HH6b3wOGEyIgSJkoLdMK47QbsxCpUcN51uaq" style="width:  250px; height:auto;"><a href="  http://www.animalprofile.com/   "><h1>   Animal Profile Pet Clinic And Diagnostics </h1></a><div class="info-box"><b>Hours:</b> 8am-9pm  <br><b>Phone:</b>  090961 38373<br><b>Address:</b> Indus Residency- B wing Shop No 3, Opp Domino Pizza, Baner Rd, Baner, Pune, Maharashtra 411045 </p></div></div>
+      <div><h2 style="text-align: center; margin-top: 100px;">Dental care </h2><p>A pet’s dental health is vital-it prevents painful diseases, protects their heart and organs, and keeps them happy and comfortable.Keep your pet healthy with expert dental care! . </p></div>
+    
+  
+      <div><h2 style="text-align: center; margin-top: 100px;">Surgery  </h2><p>Surgical care can be life-saving for pets, from routine procedures to complex surgeries.Explore these experienced veterinarians offering advanced surgical care in a safe, caring environment. </p></div>
+      <div class="support-box"><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6CSLfNY2nyjTZrH8XGUN9f0MQVJmK3B7EhkSg" style="width: 300px; height:auto;"><a href="   https://www.petcoverpune.com/  "><h1>Dr.Gorhe Pet Cover Clinic</h1></a> <br><div class="info-box"><b>Hours:</b>9:30am-1pm, 5:30-8pm<br><b>Phone:</b> 098220 15318<br><b>Address:</b>  Near Sutar Bus Stand and Karve Statue, Kothrud Bus Stand Rd, opp. Titan watch Showroom, Kothrud, Pune, Maharashtra 411038 </p></div></div>
+      <div class="support-box"><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6HFvqAsjOGEyIgSJkoLdMK47QbsxCpUcN51ua" style="width:180px; height:auto;"><a href="   https://www.practo.com/pune/clinic/petmax-clinic-erandwane  "><h1>   Petmax Pet Clinic  </h1></a> <br><div class="info-box"><b>Hours: </b>10am-1pm, 6-8:30pm <br><b>Phone:</b> 083083 08912 <br><b>Address:</b>   Shop no.2, Abhijeet Apartment, Karve Rd, Bharatkunj -2, Erandwane, Pune, Maharashtra 411038</p></div></div>
+      <div class="support-box"><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6Mg9k7SQnuUW9p3rtYvT4CeEmXlwh7KJyaDz2" style="width:300px ; height:auto;"><a href="   https://crown.vet/clinic-aundh-vet-clinic.html  "><h1>  Crown Vet Aundh   </h1></a><div class="info-box"><b>Hours:</b>  Opens 24 hours <br><b>Phone:</b> 080 6274 4103<br><b>Address:</b>  Ground floor, Showroom 1, 104, KVP Sapatnekar Marg, Anand Park, Aundh, Pune, Maharashtra 411007 </p></div></div>
+  
+     </div>
+  </div>
+</section>
+
+<section id="tips" class="tips">
+<div class="footer">
+  <p style="color:rgba(36, 36, 35, 0.996)">Making Your Pet’s First Vet Visit a Loving and Stress-Free Experience</p>
+ <p style="font-size: 20px; text-align: left;"><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6syxZ3CGkizU6CQpImwbV1SfDBXYWcMLynso4" style="width:180px; height:auto; border-radius: 50%; float:left;opacity: 0.9; border: 6px solid rgba(239, 235, 227, 0.205);"><br><b> Comfort and Reassurance-</b>
+  Bring your pet’s favorite toy or blanket to help them feel safe and loved in a new environment.<br><b>Preparation-</b>
+  Gather their medical records and jot down any questions-your care and attention make all the difference.</p><br>
+
+ <p style="font-size: 20px; text-align: right;"><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6NcPJWghgpoTv4ZBziCKLV2PNbkuGXtcxDlf6" style="width:180px; height:auto; border-radius: 50%; float:right;opacity:0.9; border: 6px solid rgba(239, 235, 227, 0.156);"> <br><b>Calm Arrival-</b>
+  Speak softly and keep your pet close, letting your presence remind them they’re not alone.<br><b>Positive Memories-</b>
+  Reward your pet with gentle praise and treats after the visit, turning a new experience into a happy memory.</p>
+</div>
+</section>
+ 
+</body>
+</html>

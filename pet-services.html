@@ -11,27 +11,197 @@
                 scroll-behavior: smooth;
             }
             
-            .services-container {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                gap: 2rem;
-                margin-top: 2rem;
+
+        </style>
+        <style>
+            
+            /* Service section styles */
+            .grooming-details {
+                margin: 3rem 0;
+                background-color: rgb(248, 224, 195);
+                padding: 2rem;
+                border-radius: 10px;
             }
             
-            .service-section {
-                flex: 1;
+            .grooming-header-bg {
+                background-image: url("https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6qwBdphsunxX1DfYa6StVcgOiv7s8JW9KlmdM");
+                height: 390px;
+                width: auto;
+                color: white;
                 padding: 2rem;
-                border: 1px dashed #ccc;
+                text-align: left;
+                border-radius: 10px;
+                margin-bottom: 2rem;
+            }
+            
+            .grooming-header {
+                text-align: center;
+                margin-bottom: 2rem;
+                color: #333;
+            }
+            
+            .grooming-header h2 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                color: rgb(71, 30, 3);
+            }
+            
+            .importance-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1rem;
+                background-color: rgb(250, 202, 148);
+                padding: 1.5rem;
+                border-radius: 8px;
+                margin: 2rem 0;
+            }
+            
+            .importance-item {
+                background-color: rgb(248, 217, 177);
+                padding: 1rem;
+                border-radius: 8px;
+            }
+            
+            .importance-item h3 {
+                color: #4e89ae;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .importance-item img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+            
+            .grooming-row {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 2rem 0;
+                background-image: linear-gradient(rgba(249, 145, 9, 0.36), white);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            
+            .grooming-photo {
+                flex: 1;
+                min-width: 300px;
+                padding: 1rem;
+            }
+            
+            .grooming-info {
+                flex: 2;
+                min-width: 300px;
+                padding: 1rem;
+            }
+            
+            .tip-box, .store-box {
+                background-color: #ffffff;
+                padding: 1rem 1.5rem;
+                border-left: 5px solid rgba(236, 125, 40, 0.834);
+                box-shadow: 0 2px 6px rgb(250, 202, 148);
+                margin: 1rem 0;
+                border-radius: 8px;
+            }
+            
+            .at-home-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1.5rem;
+                margin: 2rem 0;
+            }
+            
+            .at-home-item {
+                background-image: radial-gradient(white, rgb(251, 243, 236), rgb(248, 224, 195));
+                padding: 1.5rem;
                 border-radius: 8px;
                 text-align: center;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                height: 100%;
             }
             
-            .service-section:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            .grooming-services-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1.5rem;
+                margin: 2rem 0;
+            }
+            
+            .support-box {
+                position: relative;
+                padding: 1.5rem;
+                background: #fff;
+                border: 1px solid #d1d1d6;
+                border-radius: 12px;
+                font-weight: 600;
+                color: #1d1d1f;
+                cursor: pointer;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+                transition: box-shadow 0.2s;
+            }
+            
+            .support-box:hover {
+                box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+            }
+            
+            .info-box {
+                display: none;
+                position: absolute;
+                left: 50%;
+                top: 110%;
+                transform: translateX(-50%);
+                min-width: 250px;
+                background: #fff;
+                color: #111;
+                border: 1px solid #d1d1d6;
+                border-radius: 10px;
+                box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+                padding: 18px 22px;
+                z-index: 10;
+                font-size: 1em;
+                line-height: 1.5;
+                transition: opacity 0.3s;
+                opacity: 0;
+                pointer-events: none;
+            }
+            
+            .support-box:hover .info-box {
+                display: block;
+                opacity: 1;
+                pointer-events: auto;
+            }
+            
+            .btn-primary {
+                display: inline-block;
+                background-color: #4e89ae;
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                text-decoration: none;
+                margin-top: 1rem;
+                transition: background-color 0.3s;
+            }
+            
+            .btn-primary:hover {
+                background-color: #3a6d8f;
+            }
+            
+            @media (max-width: 768px) {
+                .grooming-row {
+                    flex-direction: column;
+                }
+                
+                .importance-container {
+                    grid-template-columns: 1fr;
+                }
+                
+                .at-home-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .grooming-services-grid {
+                    grid-template-columns: 1fr;
+                }
             }
         </style>
     </head>
@@ -49,9 +219,9 @@
                 <li class="dropdown">
                     <a href="pet-services.html" class="dropdown-toggle">Pet Services <span class="dropdown-icon">▾</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#grooming">Grooming</a></li>
-                        <li><a href="#food-meds">Food & Meds</a></li>
-                        <li><a href="#vets">Vets Near You</a></li>
+                        <li><a href="#grooming-details">Grooming</a></li>
+                        <li><a href="#food-meds-details">Food & Meds</a></li>
+                        <li><a href="#vets-details">Vets Near You</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -78,25 +248,491 @@
             <div class="container">
                 <h1>Pet Services</h1>
                 <p>Explore our range of services for your beloved pets.</p>
+            </div>
+        </section>
+
+        <!-- Grooming Details Section -->
+        <section class="grooming-details" id="grooming-details">
+            <div class="container">
+                <div class="grooming-header-bg">
+                    <h1 style="margin-top: 40px; font-size: 2.8rem;">Fluff It Up! Grooming Magic for Your Pet</h1>
+                    <h3 style="font-size: 1.5rem; margin-top:20px; padding: 40px;">"We're Here to Make Your Pet Look Pawsitively Adorable<br>—Fluffy, Fresh, and Full of Joy!"</h3>
+                </div>
                 
-                <div class="services-container">
-                    <!-- Grooming Section -->
-                    <div class="service-section" id="grooming">
-                        <h2>Grooming</h2>
-                        <p>Professional pet grooming services.</p>
+                <div class="grooming-importance">
+                    <h3>Ever wondered how grooming can do more than just freshen up your pet?</h3>
+                    <div class="importance-container">
+                        <div class="importance-item">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6oAQtQU5E47SntcFgiw1hKzx6mWR5jA8MkOId" alt="Health icon"> Health and Hygiene</h3>
+                            <p>Regular grooming helps prevent skin infections, mats, and tangles that can cause discomfort and lead to health issues.</p>
+                        </div>
+                        <div class="importance-item">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6fyFmlA7ktP4LoSQgNHaZnidXq8EYWyIhOcK0" alt="Parasite icon"> Prevents Parasites</h3>
+                            <p>Grooming helps you spot fleas, ticks, and other parasites early on.</p>
+                        </div>
+                        <div class="importance-item">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6wb92vHENdtE3zXrR9hL5S7fqIe8UT6QlYmoV" alt="Health detection icon"> Early Detection of Health Issues</h3>
+                            <p>Early detection of problems like allergies, infections, or tumors can lead to faster treatment.</p>
+                        </div>
+                        <div class="importance-item">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6tDD0qjP8XwsEZDrG7YWhKC1mjUa5qxcu0Qdp" alt="Bonding icon"> Promotes Bonding</h3>
+                            <p>Grooming is a great opportunity to bond with your pet.</p>
+                        </div>
+                        <div class="importance-item">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme67EHeZuRKjWuUs5B3lbMCad6PDS1f80nNxm2k" alt="Mental wellbeing icon"> Improves Mental Well-Being</h3>
+                            <p>Pets often feel more at ease after a grooming session, especially if it's done regularly. It can help them feel pampered, reducing stress and anxiety.</p>
+                        </div>
+                        <div class="importance-item">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6cn8VJVSbUfiVTPshM69l5weOjmcCakoRtSp3" alt="Comfort icon"> Comfort</h3>
+                            <p>Removing excess fur or mats ensures that pets feel more comfortable. Especially for long-haired breeds, grooming prevents painful tangles that can restrict movement or cause skin irritation.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Food & Meds Section -->
-                    <div class="service-section" id="food-meds">
-                        <h2>Food & Meds</h2>
-                        <p>Quality pet food and medications.</p>
+                </div>
+                
+                <div class="grooming-row">
+                    <div class="grooming-photo">
+                        <img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6yCkJFSYZGXRutMW8y6qFUvOT7HCgIs5S2w0a" alt="Pet grooming" style="width:100%; max-width:35rem">
                     </div>
-                    
-                    <!-- Vets Near You Section -->
-                    <div class="service-section" id="vets">
-                        <h2>Vets Near You</h2>
-                        <p>Find veterinary services in your area.</p>
+                    <div class="grooming-info">
+                        <h2 style="font-size: 2rem;">Pro Tips for Pampering</h2>      
+                        <div class="store-box">
+                            <strong>Brushing and Coat Care</strong><br>
+                            <p>Brush your pet's coat according to their breed and hair type.<br>
+                            Long-haired pets may need daily brushing, while short-haired pets can be brushed weekly.<br>
+                            Gently detangle any knots to prevent discomfort and skin issues.</p>
+                        </div>
+                        <div class="store-box">
+                            <strong>Bathing Basics</strong><br>
+                            <p>Always use shampoos formulated for pets to avoid skin irritation.<br>
+                            Most dogs need a bath every 4-6 weeks; cats usually groom themselves but may need occasional baths if they get dirty.<br>
+                            Towel dry and, if needed, use a pet-safe hair dryer on a low setting.</p>
+                        </div>
+                        <div class="store-box">
+                            <strong>Create a Positive Experience</strong><br>
+                            <p>Let your pet get used to grooming tools and routines gradually.<br>
+                            Reward your pet for calm behavior to make grooming a positive experience.<br>
+                            Some adopted pets may be nervous; gentle handling and patience are key.</p>
+                        </div>
                     </div>
+                </div>
+                
+                <h2 style="text-align:center; margin-top:3rem;">At-Home Grooming: How to Pamper Your Pet Like a Pro</h2>
+                <div class="at-home-grid">
+                    <div class="at-home-item">
+                        <h3>Regular Brushing</h3>
+                        <p>Brush at least 2-3 times a week, or daily for long-haired breeds, using gentle, circular motions and paying attention to areas prone to tangles like behind the ears and under the belly. Choose a brush or comb that matches your pet's fur texture—slicker brushes for long-haired pets, rubber brushes for short-haired breeds, and deshedding tools for double-coated animals.</p>
+                    </div>
+                    <div class="at-home-item">
+                        <h3>Nail Trimming</h3>
+                        <p>Regular nail trimming prevents discomfort, injuries, and skeletal issues. Use pet nail clippers and trim only the tip to avoid cutting the quick (the sensitive part of the nail). If unsure, trim small amounts at a time. Check your pet's nails every few weeks and trim as needed.</p>
+                    </div>
+                    <div class="at-home-item">
+                        <h3>Ear Cleaning</h3>
+                        <p>Clean your pet's ears with a vet-recommended ear cleaning solution and a cotton ball or gauze. Gently wipe the outer ear—never insert anything deep into the ear canal. Regular ear cleaning helps prevent infections, especially in breeds with floppy ears.</p>
+                        <img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6syy9CrGkizU6CQpImwbV1SfDBXYWcMLynso4" alt="Ear cleaning" style="height:120px; width:90%; border:1px solid grey; margin-top:1rem;">
+                    </div>
+                    <div class="at-home-item">
+                        <h3>Dental Care</h3>
+                        <p>Brush your pet's teeth regularly with a pet-specific toothbrush and toothpaste to prevent dental diseases and bad breath. Dental chews can also help maintain oral hygiene.</p>
+                        <img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6mONVxkHrBuO5SAldbsvG01qTWYp6cz7UCikw" alt="Dental care" style="height:120px; width:90%; border:1px solid grey; margin-top:1rem;">
+                    </div>
+                    <div class="at-home-item">
+                        <h3>Coat and Hair Trimming</h3>
+                        <p>For pets with long or fast-growing hair, occasional trimming is necessary to avoid matting and overheating. Use blunt-ended scissors or pet clippers, and trim cautiously around sensitive areas like the eyes and paws.</p>
+                        <img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6gyz6STevujSx0QFmXB4DAbJ87nRqNctrVe2I" alt="Hair trimming" style="height:120px; width:90%; border:1px solid grey; margin-top:1rem;">
+                    </div>
+                </div>
+                
+                <h2 style="text-align:center; margin-top:3rem;">Professional Grooming Services in Pune</h2>
+                <div class="grooming-services-grid">
+                    <div class="support-box">
+                        Pet Wagon Pune
+                        <p>Pet groomer <br>3+ years in business. Pune, Maharashtra <br>
+                        Open 24 hours  094220 22036</p>
+                        <div class="info-box">
+                            <strong>Pet Wagon </strong><br>
+                            <b>Address</b>: Narveer Tanaji Wadi, Shivajinagar, Pune, Maharashtra 411008<br>
+                            <b>Areas served</b>: Pune and nearby areas<br>
+                            <b>Hours:</b> Open 24 hours<br>
+                            <b>Phone:</b> 094220 22036<br>
+                            <a href="https://petwagon.in/" style="color:#0071e3;text-decoration:none;">Visit Pet Wagon Website  &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        Comb & Collar Pet Grooming
+                        <p>Training, Pet supplies and 24/7 cage free Boarding<br>Pet groomer, Pune, Maharashtra  <br>Closes 9:30 pm  093222 72106</p>
+                        <div class="info-box">
+                            <strong>Comb & Collar Pet Grooming</strong><br>
+                            <b>Address:</b> Showroom no 9, ABIL Imperial, Near, Rohan Seher Ln, Baner, Pune, Maharashtra 411045<br>
+                            <b>Areas served:</b> Pune<br>
+                            <b>Hours:</b> Opens 9 am Fri<br>
+                            <b>Phone:</b> 093222 72106<br>
+                            <a href="https://m.dingg.in/book?id=5721832159&source=5" style="color:#0071e3;text-decoration:none;">Visit Comb & Collar Pet Grooming &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        Dog Mitra
+                        <p>Pet groomer in Pune, Maharashtra<br>3+ years in business <br>Opens 10 am Fri · 092721 29797</p>
+                        <div class="info-box">
+                            <strong>Dog Mitra | Pet Grooming Salon </strong><br>
+                            <b>Address:</b> Shop No 4 & 5, Golden Arch Society, Prabhat Housing Society, Vidnyan Nagar, Bavdhan, Pune, Maharashtra 411021<br>
+                            <b>Areas served: </b>Pune<br>
+                            <b>Hours:</b> Opens 9am <br>
+                            <b>Phone: </b> 073035 14453<br>
+                            <a href="https://dogmitra.com/" style="color:#0071e3;text-decoration:none;">Visit Dog Mitra website &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        PAW FUTURE PET SERVICES
+                        <p>5+ years in business · Pune, Maharashtra<br> Opens 8:30 am Fri · 089750 03750<br></p>
+                        <div class="info-box">
+                            <strong>PAW FUTURE PET SERVICES  </strong><br>
+                            <b>Address: </b> Lower Bibwewadi, Mahesh Society, Bibwewadi, Pune, Maharashtra 411037<br>
+                            <b>Hours:</b> Opens 8am<br>
+                            <b>Areas served: </b> Pune and nearby areas<br>
+                            <b>Phone: </b> 089750 03750<br>
+                            <a href="https://paw-future-pet.localo.site/" style="color:#0071e3;text-decoration:none;">Visit the website &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        Beauty in the Beast Dog Salon and Academy
+                        <p>Pet groomer in Pune, Maharashtra<br> Opens 10 am <br>7+ years in business </p>
+                        <div class="info-box">
+                            <strong> Beauty in the Beast Dog Salon and Academy</strong><br>
+                            <b>Address:</b>Shop no. 2, Rahul CHS, Madhuban Society, Samarth Rd, opposite SBI, Madhusanchay Society, Tejonidhi Housing Society, Ganesh Nagar, Karvenagar, Pune, Maharashtra 411052 <br>
+                            <b>Areas served: </b>Pune<br>
+                            <b>Hours: </b> ⋅Opens 10 am 
+                            <br><b>Phone:</b> 092721 29797<br>
+                            <b>Products and services: </b> beautyinthebeast.dog<br>
+                            <a href="https://www.beautyinthebeast.dog/" style="color:#0071e3;text-decoration:none;">Visit the website &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        Bubbly Paws Professional Pet Grooming Salon
+                        <p>Pet groomer in Pimpri-Chinchwad, Maharashtra<br> Opens 9 am Fri · 093093 77630</p>
+                        <div class="info-box">
+                            <strong>Bubbly Paws Professional Pet Grooming Salon </strong><br>
+                            <b>Address:</b> B7, Kuber Imperia, Datta Mandir Rd, Shankar Kalat Nagar, Wakad, Pune, Pimpri-Chinchwad, Maharashtra 411057
+                            <br>
+                            <b>Areas served:</b>Pune and nearby areas<br>
+                            <b>Phone: </b>  093093 77630
+                            <br>
+                            <br>
+                            <a href="https://www.instagram.com/bubblypaws_pune/" style="color:#0071e3;text-decoration:none;">Visit their instagram &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <h3>4.9 ⭐</h3>
+                    <p style="margin-top: 1rem;">72K+ Ratings</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Food & Meds Details Section -->
+        <section class="grooming-details" id="food-meds-details" style="background-color: rgb(230, 245, 230);">
+            <div class="container">
+                <div class="grooming-header-bg" style="background-image: url('https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6qwBdphsunxX1DfYa6StVcgOiv7s8JW9KlmdM');">
+                    <h1 style="margin-top: 40px; font-size: 2.8rem;">Nourish & Care: Food & Medications for Your Pet</h1>
+                    <h3 style="font-size: 1.5rem; margin-top:20px; padding: 40px;">"Providing the Best Nutrition and Healthcare<br>—Because Your Pet Deserves Nothing Less!"</h3>
+                </div>
+                
+                <div class="grooming-importance">
+                    <h3>Why proper nutrition and medication matter for your pet's wellbeing</h3>
+                    <div class="importance-container" style="background-color: rgb(200, 230, 200);">
+                        <div class="importance-item" style="background-color: rgb(220, 240, 220);">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6oAQtQU5E47SntcFgiw1hKzx6mWR5jA8MkOId" alt="Health icon"> Overall Health</h3>
+                            <p>Proper nutrition is the foundation of your pet's health, affecting everything from coat quality to immune function and energy levels.</p>
+                        </div>
+                        <div class="importance-item" style="background-color: rgb(220, 240, 220);">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6fyFmlA7ktP4LoSQgNHaZnidXq8EYWyIhOcK0" alt="Longevity icon"> Longevity</h3>
+                            <p>Quality food and appropriate medications can significantly extend your pet's lifespan and improve their quality of life.</p>
+                        </div>
+                        <div class="importance-item" style="background-color: rgb(220, 240, 220);">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6wb92vHENdtE3zXrR9hL5S7fqIe8UT6QlYmoV" alt="Prevention icon"> Disease Prevention</h3>
+                            <p>Proper nutrition and preventative medications help ward off many common health issues before they develop.</p>
+                        </div>
+                        <div class="importance-item" style="background-color: rgb(220, 240, 220);">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6tDD0qjP8XwsEZDrG7YWhKC1mjUa5qxcu0Qdp" alt="Weight icon"> Weight Management</h3>
+                            <p>The right diet helps maintain a healthy weight, preventing obesity-related conditions like diabetes and joint problems.</p>
+                        </div>
+                        <div class="importance-item" style="background-color: rgb(220, 240, 220);">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme67EHeZuRKjWuUs5B3lbMCad6PDS1f80nNxm2k" alt="Digestion icon"> Digestive Health</h3>
+                            <p>Species-appropriate nutrition supports optimal digestion and nutrient absorption, reducing digestive upsets.</p>
+                        </div>
+                        <div class="importance-item" style="background-color: rgb(220, 240, 220);">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6cn8VJVSbUfiVTPshM69l5weOjmcCakoRtSp3" alt="Parasite icon"> Parasite Protection</h3>
+                            <p>Regular preventative medications protect your pet from harmful parasites like fleas, ticks, heartworms, and intestinal worms.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grooming-row" style="background-image: linear-gradient(rgba(100, 180, 100, 0.36), white);">
+                    <div class="grooming-photo">
+                        <img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6yCkJFSYZGXRutMW8y6qFUvOT7HCgIs5S2w0a" alt="Pet food" style="width:100%; max-width:35rem">
+                    </div>
+                    <div class="grooming-info">
+                        <h2 style="font-size: 2rem;">Nutrition Essentials</h2>      
+                        <div class="store-box" style="border-left: 5px solid rgba(100, 180, 100, 0.834); box-shadow: 0 2px 6px rgb(200, 230, 200);">
+                            <strong>Understanding Pet Food Labels</strong><br>
+                            <p>Look for foods with named meat sources (like "chicken" rather than "meat by-products").<br>
+                            Check that the food meets AAFCO (Association of American Feed Control Officials) standards.<br>
+                            Be wary of excessive fillers like corn and wheat in the first few ingredients.</p>
+                        </div>
+                        <div class="store-box" style="border-left: 5px solid rgba(100, 180, 100, 0.834); box-shadow: 0 2px 6px rgb(200, 230, 200);">
+                            <strong>Age-Appropriate Nutrition</strong><br>
+                            <p>Puppies and kittens need specially formulated foods with higher protein and calories.<br>
+                            Adult pets require balanced maintenance diets.<br>
+                            Senior pets benefit from foods with joint support ingredients and moderate protein levels.</p>
+                        </div>
+                        <div class="store-box" style="border-left: 5px solid rgba(100, 180, 100, 0.834); box-shadow: 0 2px 6px rgb(200, 230, 200);">
+                            <strong>Special Dietary Needs</strong><br>
+                            <p>Some pets require prescription diets for conditions like kidney disease, diabetes, or food allergies.<br>
+                            Always consult your veterinarian before switching to a specialized diet.<br>
+                            Transition to new foods gradually over 7-10 days to prevent digestive upset.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2 style="text-align:center; margin-top:3rem;">Essential Medications for Pet Health</h2>
+                <div class="at-home-grid">
+                    <div class="at-home-item" style="background-image: radial-gradient(white, rgb(240, 250, 240), rgb(220, 240, 220));">
+                        <h3>Parasite Prevention</h3>
+                        <p>Regular flea, tick, and heartworm preventatives are essential for all pets. These medications protect against parasites that can cause serious health issues and transmit diseases. Most preventatives should be given monthly, and it's important to use products specifically formulated for your pet's species and weight.</p>
+                    </div>
+                    <div class="at-home-item" style="background-image: radial-gradient(white, rgb(240, 250, 240), rgb(220, 240, 220));">
+                        <h3>Vaccinations</h3>
+                        <p>Core vaccines protect against serious, life-threatening diseases. For dogs, these typically include rabies, distemper, parvovirus, and adenovirus. For cats, core vaccines include rabies, panleukopenia, calicivirus, and herpesvirus. Your veterinarian may recommend additional vaccines based on your pet's lifestyle and risk factors.</p>
+                    </div>
+                    <div class="at-home-item" style="background-image: radial-gradient(white, rgb(240, 250, 240), rgb(220, 240, 220));">
+                        <h3>Dental Care Products</h3>
+                        <p>Dental health is crucial for overall wellbeing. Products like enzymatic toothpaste, dental chews, and water additives help maintain oral hygiene and prevent periodontal disease, which can lead to serious health issues if left untreated.</p>
+                        <img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6mONVxkHrBuO5SAldbsvG01qTWYp6cz7UCikw" alt="Dental care" style="height:120px; width:90%; border:1px solid grey; margin-top:1rem;">
+                    </div>
+                    <div class="at-home-item" style="background-image: radial-gradient(white, rgb(240, 250, 240), rgb(220, 240, 220));">
+                        <h3>Joint Supplements</h3>
+                        <p>Glucosamine, chondroitin, and omega-3 fatty acids can help maintain joint health, especially in aging pets or breeds prone to arthritis and hip dysplasia. These supplements support cartilage health and reduce inflammation, improving mobility and quality of life.</p>
+                    </div>
+                    <div class="at-home-item" style="background-image: radial-gradient(white, rgb(240, 250, 240), rgb(220, 240, 220));">
+                        <h3>First Aid Essentials</h3>
+                        <p>Every pet owner should maintain a basic pet first aid kit including antiseptic solution, gauze, bandages, tweezers, and styptic powder. Always consult your veterinarian before administering any medication, and know when a situation requires immediate professional care.</p>
+                    </div>
+                </div>
+                
+                <h2 style="text-align:center; margin-top:3rem;">Recommended Pet Stores in Pune</h2>
+                <div class="grooming-services-grid">
+                    <div class="support-box">
+                        Petsworld
+                        <p>Pet store in Pune, Maharashtra<br>Opens 10 am · 098220 22036</p>
+                        <div class="info-box">
+                            <strong>Petsworld</strong><br>
+                            <b>Address</b>: Shop No. 6, Sai Chambers, Opposite Amanora Mall Gate No. 2, Hadapsar, Pune, Maharashtra 411028<br>
+                            <b>Hours:</b> 10 AM - 9 PM<br>
+                            <b>Phone:</b> 098220 22036<br>
+                            <a href="https://www.petsworld.in/" style="color:#0071e3;text-decoration:none;">Visit Petsworld Website &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        Pawsome Pet Store
+                        <p>Pet store in Pune, Maharashtra<br>Opens 10:30 am · 077200 42106</p>
+                        <div class="info-box">
+                            <strong>Pawsome Pet Store</strong><br>
+                            <b>Address:</b> Shop No. 3, Sai Plaza, Aundh, Pune, Maharashtra 411007<br>
+                            <b>Hours:</b> 10:30 AM - 8:30 PM<br>
+                            <b>Phone:</b> 077200 42106<br>
+                            <a href="https://pawsomepetstore.com/" style="color:#0071e3;text-decoration:none;">Visit Pawsome Pet Store &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        Pet Point
+                        <p>Pet store in Pune, Maharashtra<br>Opens 9 am · 096571 29797</p>
+                        <div class="info-box">
+                            <strong>Pet Point</strong><br>
+                            <b>Address:</b> Shop No. 7, Kumar Presidency, Koregaon Park, Pune, Maharashtra 411001<br>
+                            <b>Hours:</b> 9 AM - 9 PM<br>
+                            <b>Phone:</b> 096571 29797<br>
+                            <a href="https://petpoint.in/" style="color:#0071e3;text-decoration:none;">Visit Pet Point website &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        Heads Up For Tails
+                        <p>Pet store in Pune, Maharashtra<br>Opens 11 am · 089750 03750</p>
+                        <div class="info-box">
+                            <strong>Heads Up For Tails</strong><br>
+                            <b>Address:</b> Shop No. 5, Phoenix Marketcity, Viman Nagar, Pune, Maharashtra 411014<br>
+                            <b>Hours:</b> 11 AM - 9:30 PM<br>
+                            <b>Phone:</b> 089750 03750<br>
+                            <a href="https://headsupfortails.com/" style="color:#0071e3;text-decoration:none;">Visit Heads Up For Tails &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <h3>4.8 ⭐</h3>
+                    <p style="margin-top: 1rem;">45K+ Ratings</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vets Near You Details Section -->
+        <section class="grooming-details" id="vets-details" style="background-color: rgb(230, 235, 250);">
+            <div class="container">
+                <div class="grooming-header-bg" style="background-image: url('https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6qwBdphsunxX1DfYa6StVcgOiv7s8JW9KlmdM');">
+                    <h1 style="margin-top: 40px; font-size: 2.8rem;">Expert Care: Veterinary Services Near You</h1>
+                    <h3 style="font-size: 1.5rem; margin-top:20px; padding: 40px;">"Connecting You with Compassionate Veterinary Care<br>—For When Your Pet Needs It Most!"</h3>
+                </div>
+                
+                <div class="grooming-importance">
+                    <h3>Why regular veterinary care is essential for your pet's health</h3>
+                    <div class="importance-container" style="background-color: rgb(200, 210, 240);">
+                        <div class="importance-item" style="background-color: rgb(220, 225, 245);">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6oAQtQU5E47SntcFgiw1hKzx6mWR5jA8MkOId" alt="Health icon"> Preventative Care</h3>
+                            <p>Regular check-ups help catch health issues before they become serious problems, saving your pet from suffering and potentially saving you money on treatment costs.</p>
+                        </div>
+                        <div class="importance-item" style="background-color: rgb(220, 225, 245);">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6fyFmlA7ktP4LoSQgNHaZnidXq8EYWyIhOcK0" alt="Vaccination icon"> Vaccinations</h3>
+                            <p>Keeping your pet's vaccinations up-to-date protects them from serious and potentially fatal diseases.</p>
+                        </div>
+                        <div class="importance-item" style="background-color: rgb(220, 225, 245);">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6wb92vHENdtE3zXrR9hL5S7fqIe8UT6QlYmoV" alt="Dental icon"> Dental Health</h3>
+                            <p>Professional dental cleanings and examinations prevent periodontal disease, which can lead to serious health issues affecting the heart, liver, and kidneys.</p>
+                        </div>
+                        <div class="importance-item" style="background-color: rgb(220, 225, 245);">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6tDD0qjP8XwsEZDrG7YWhKC1mjUa5qxcu0Qdp" alt="Aging icon"> Senior Pet Care</h3>
+                            <p>As pets age, they require more frequent check-ups and specialized care to maintain their quality of life and manage age-related conditions.</p>
+                        </div>
+                        <div class="importance-item" style="background-color: rgb(220, 225, 245);">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme67EHeZuRKjWuUs5B3lbMCad6PDS1f80nNxm2k" alt="Emergency icon"> Emergency Services</h3>
+                            <p>Knowing where to go in an emergency can be life-saving. Having an established relationship with a veterinarian ensures your pet receives prompt care when needed.</p>
+                        </div>
+                        <div class="importance-item" style="background-color: rgb(220, 225, 245);">
+                            <h3><img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6cn8VJVSbUfiVTPshM69l5weOjmcCakoRtSp3" alt="Advice icon"> Expert Advice</h3>
+                            <p>Veterinarians provide valuable guidance on nutrition, behavior, preventative care, and other aspects of pet health that help you make informed decisions for your pet.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grooming-row" style="background-image: linear-gradient(rgba(100, 130, 200, 0.36), white);">
+                    <div class="grooming-photo">
+                        <img src="https://rxc74g224p.ufs.sh/f/5ab4SFd4nme6yCkJFSYZGXRutMW8y6qFUvOT7HCgIs5S2w0a" alt="Veterinary care" style="width:100%; max-width:35rem">
+                    </div>
+                    <div class="grooming-info">
+                        <h2 style="font-size: 2rem;">When to See a Vet</h2>      
+                        <div class="store-box" style="border-left: 5px solid rgba(100, 130, 200, 0.834); box-shadow: 0 2px 6px rgb(200, 210, 240);">
+                            <strong>Routine Care</strong><br>
+                            <p>Annual or bi-annual wellness exams for all pets.<br>
+                            Puppies and kittens need multiple visits for initial vaccinations and health checks.<br>
+                            Senior pets (generally 7+ years for dogs, 10+ for cats) should have check-ups every 6 months.</p>
+                        </div>
+                        <div class="store-box" style="border-left: 5px solid rgba(100, 130, 200, 0.834); box-shadow: 0 2px 6px rgb(200, 210, 240);">
+                            <strong>Warning Signs</strong><br>
+                            <p>Changes in eating, drinking, or elimination habits.<br>
+                            Lethargy, unusual behavior, or signs of pain.<br>
+                            Vomiting, diarrhea, coughing, sneezing, or difficulty breathing.</p>
+                        </div>
+                        <div class="store-box" style="border-left: 5px solid rgba(100, 130, 200, 0.834); box-shadow: 0 2px 6px rgb(200, 210, 240);">
+                            <strong>Emergencies</strong><br>
+                            <p>Difficulty breathing, collapse, or seizures.<br>
+                            Severe bleeding, trauma, or suspected poisoning.<br>
+                            Inability to urinate, severe vomiting/diarrhea, or bloated abdomen.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2 style="text-align:center; margin-top:3rem;">Preparing for Vet Visits</h2>
+                <div class="at-home-grid">
+                    <div class="at-home-item" style="background-image: radial-gradient(white, rgb(235, 240, 250), rgb(220, 225, 245));">
+                        <h3>Before the Visit</h3>
+                        <p>Write down any questions or concerns you have about your pet's health. Gather information about your pet's recent behavior, appetite, water intake, and elimination habits. For new pets, bring any available medical records. For medication refills, bring the current medication container.</p>
+                    </div>
+                    <div class="at-home-item" style="background-image: radial-gradient(white, rgb(235, 240, 250), rgb(220, 225, 245));">
+                        <h3>During the Visit</h3>
+                        <p>Keep your pet secure in a carrier or on a leash. Be prepared to describe any symptoms or changes you've noticed. Ask questions about preventative care, nutrition, and behavior. Take notes on the veterinarian's recommendations and any medication instructions.</p>
+                    </div>
+                    <div class="at-home-item" style="background-image: radial-gradient(white, rgb(235, 240, 250), rgb(220, 225, 245));">
+                        <h3>After the Visit</h3>
+                        <p>Follow the veterinarian's treatment plan and medication schedule. Monitor your pet for any changes or side effects from medications. Schedule follow-up appointments as recommended. Implement any suggested dietary or lifestyle changes.</p>
+                    </div>
+                    <div class="at-home-item" style="background-image: radial-gradient(white, rgb(235, 240, 250), rgb(220, 225, 245));">
+                        <h3>Reducing Stress</h3>
+                        <p>For cats, leave the carrier out several days before the appointment so they can get used to it. Use calming pheromone sprays or wipes designed for pets. Bring your pet's favorite treats or toy. For anxious pets, ask your veterinarian about anti-anxiety medications that can be given before the visit.</p>
+                    </div>
+                </div>
+                
+                <h2 style="text-align:center; margin-top:3rem;">Veterinary Clinics in Pune</h2>
+                <div class="grooming-services-grid">
+                    <div class="support-box">
+                        Small Animal Clinic
+                        <p>Veterinarian in Pune, Maharashtra<br>Opens 9 am · 020 2553 6462</p>
+                        <div class="info-box">
+                            <strong>Small Animal Clinic</strong><br>
+                            <b>Address</b>: 759/75, Deccan Gymkhana, Pune, Maharashtra 411004<br>
+                            <b>Hours:</b> 9 AM - 1:30 PM, 5 PM - 8 PM<br>
+                            <b>Phone:</b> 020 2553 6462<br>
+                            <a href="http://www.smallanimalclinic.in/" style="color:#0071e3;text-decoration:none;">Visit Small Animal Clinic Website &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        Crown Vet Clinic
+                        <p>Veterinarian in Pune, Maharashtra<br>Opens 10 am · 099232 42106</p>
+                        <div class="info-box">
+                            <strong>Crown Vet Clinic</strong><br>
+                            <b>Address:</b> Shop No. 5, Clover Center, Moledina Road, Camp, Pune, Maharashtra 411001<br>
+                            <b>Hours:</b> 10 AM - 8 PM<br>
+                            <b>Phone:</b> 099232 42106<br>
+                            <a href="https://crownvetclinic.com/" style="color:#0071e3;text-decoration:none;">Visit Crown Vet Clinic &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        Pet's Friend Veterinary Clinic
+                        <p>Veterinarian in Pune, Maharashtra<br>Opens 9:30 am · 098231 29797</p>
+                        <div class="info-box">
+                            <strong>Pet's Friend Veterinary Clinic</strong><br>
+                            <b>Address:</b> Shop No. 3, Gera Junction, Koregaon Park, Pune, Maharashtra 411001<br>
+                            <b>Hours:</b> 9:30 AM - 8:30 PM<br>
+                            <b>Phone:</b> 098231 29797<br>
+                            <a href="https://petsfriendclinic.com/" style="color:#0071e3;text-decoration:none;">Visit Pet's Friend website &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        Happy Tails Veterinary Specialty
+                        <p>Veterinarian in Pune, Maharashtra<br>Opens 9 am · 077200 03750</p>
+                        <div class="info-box">
+                            <strong>Happy Tails Veterinary Specialty</strong><br>
+                            <b>Address:</b> Shop No. 8, Kumar Millennium, Kalyani Nagar, Pune, Maharashtra 411006<br>
+                            <b>Hours:</b> 9 AM - 9 PM<br>
+                            <b>Phone:</b> 077200 03750<br>
+                            <a href="https://happytailsvet.in/" style="color:#0071e3;text-decoration:none;">Visit Happy Tails Vet &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        Pet Care Veterinary Clinic
+                        <p>Veterinarian in Pune, Maharashtra<br>Opens 10 am · 098220 29797</p>
+                        <div class="info-box">
+                            <strong>Pet Care Veterinary Clinic</strong><br>
+                            <b>Address:</b> Shop No. 4, Sai Chambers, Karve Road, Kothrud, Pune, Maharashtra 411038<br>
+                            <b>Hours:</b> 10 AM - 8 PM<br>
+                            <b>Phone:</b> 098220 29797<br>
+                            <a href="https://petcareclinic.co.in/" style="color:#0071e3;text-decoration:none;">Visit Pet Care Clinic &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        Pawsome Veterinary Hospital
+                        <p>Veterinary hospital in Pune, Maharashtra<br>24/7 Emergency Services · 077380 03750</p>
+                        <div class="info-box">
+                            <strong>Pawsome Veterinary Hospital</strong><br>
+                            <b>Address:</b> Shop No. 10, Amanora Town Centre, Hadapsar, Pune, Maharashtra 411028<br>
+                            <b>Hours:</b> Open 24 hours<br>
+                            <b>Phone:</b> 077380 03750<br>
+                            <a href="https://pawsomevethospital.com/" style="color:#0071e3;text-decoration:none;">Visit Pawsome Vet Hospital &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <h3>4.7 ⭐</h3>
+                    <p style="margin-top: 1rem;">38K+ Ratings</p>
                 </div>
             </div>
         </section>

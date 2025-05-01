@@ -95,9 +95,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="pet-attribute">Size: ${pet.size || 'Medium'}</span>
                     <span class="pet-attribute">Energy: ${pet.energyLevel || 'Medium'}</span>
                 </div>
-                <a href="#" class="pet-adopt-btn">Learn More</a>
+                <a href="javascript:void(0);" class="pet-adopt-btn">Learn More</a>
             </div>
         `;
+        
+        // Add event listener to the Learn More button
+        const learnMoreBtn = card.querySelector('.pet-adopt-btn');
+        if (learnMoreBtn) {
+            learnMoreBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                // Import and use the openPetModal function
+                import('./modal.js').then(module => {
+                    module.openPetModal(pet);
+                }).catch(err => {
+                    console.error('Error opening pet modal:', err);
+                });
+            });
+        }
         
         return card;
     }
